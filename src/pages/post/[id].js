@@ -1,12 +1,15 @@
 import React from "react";
-import db from "../../FirestoreConfig";
-import { useParams } from "react-router-dom";
-import PostFooter from "../../components/PostFooter";
+import db from "../../firestoreConfig/FirestoreConfig.js";
+//Importacion necesaria para capturar los datos del enlace dinamico
+import { useRouter } from 'next/router';
+import PostFooter from "../../components/PostFooter.jsx";
 
 const Post = () => {
   const [post, setPost] = React.useState([]);
-
-  const { id } = useParams();
+  
+  //Implementacion de useRouter para poder capturar la variable id y poder usarla
+  const router = useRouter();
+  const { id } = router.query; 
 
   React.useEffect(() => {
     //Variable para establecer en que colleccion debe buscar y el documento a encontrar establecido de forma dinamica

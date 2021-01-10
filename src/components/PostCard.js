@@ -30,7 +30,7 @@ function PostCard(props) {
         </div>
       </div>
       <footer class="card-footer">
-      <Link href={`/post/${props.id}`}>
+      <Link href="/post/[id]" as={`/post/${props.id}`}>
 	<a  class="card-footer-item button is-link">Leer mas</a>
         </Link>
       </footer>

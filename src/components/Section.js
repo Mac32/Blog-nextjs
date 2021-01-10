@@ -1,5 +1,5 @@
 import React from "react";
-import SectionProject from "./SectionProject";
+import SectionProject from "./SectionProject.js";
 import SectionPost from "./SectionPost";
 import SectionSkills from "./SectionSkills";
 
