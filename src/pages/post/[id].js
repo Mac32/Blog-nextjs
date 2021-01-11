@@ -34,7 +34,7 @@ const Post = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container is-fluid">
       <div>
         <hr />
         <div>
@@ -44,10 +44,7 @@ const Post = () => {
         <figure className="image is-3by1">
           <img src={post.urlImage} alt={post.descriptionImage} />
         </figure>
-        <div
-          className="content is-medium contenido"
-          dangerouslySetInnerHTML={{ __html: post.contenido }}
-        ></div>
+        <div dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
       </div>
       <PostFooter autor={post.autor} />
     </div>
