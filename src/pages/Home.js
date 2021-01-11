@@ -6,10 +6,10 @@ class Home extends Component {
     return (
       <div>
         <div className="columns isdesktop">
-          <div class="column">            
+          <div className="column">
             <Section />
           </div>
-        </div> 
+        </div>
       </div>
     );
   }

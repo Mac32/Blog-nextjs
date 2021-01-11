@@ -11,20 +11,20 @@ class SectionSkills extends React.Component {
           <hr />
         </div>
         <div className="columns">
-          <div class="column" sm={4}>
+          <div className="column" sm={4}>
             <PostCard />
           </div>
           <br />
-          <div class="column" sm={4}>
+          <div className="column" sm={4}>
             <PostCard />
           </div>
-          <div class="column" sm={4}>
+          <div className="column" sm={4}>
             <PostCard />
           </div>
-          <div class="column" sm={4}>
+          <div className="column" sm={4}>
             <PostCard />
           </div>
-          <div class="column" sm={4}>
+          <div className="column" sm={4}>
             <PostCard />
           </div>
         </div>

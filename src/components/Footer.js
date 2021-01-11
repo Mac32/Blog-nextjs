@@ -5,11 +5,12 @@ export default function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
         <Link href="/">
-          <img class="navbar-item" 
-            src="https://bulma.io/images/bulma-logo.png"
+          <img
+            className="navbar-item"
+            src="https://i.ibb.co/c2KxvXH/Logo-completo-optimizado.jpg"
             width="112"
             height="28"
           />

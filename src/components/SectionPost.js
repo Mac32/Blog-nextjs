@@ -28,14 +28,14 @@ class SectionPost extends React.Component {
     const { items } = this.state;
     return (
       <article className="sectionProject">
-        <div className="titulo">
-          <h2>Publicaciones</h2>
+        <div>
+          <h2 className="title is-2 is-center">Publicaciones</h2>
           <hr />
         </div>
-        <div class="columns is-desktop">
+        <div className="columns is-desktop">
           {items && items !== undefined
             ? items.map((item, key) => (
-                <div class="column is-3" key={key}>
+                <div className="column is-3" key={key}>
                   <PostCard
                     id={item.data.id}
                     titulo={item.data.titulo}
