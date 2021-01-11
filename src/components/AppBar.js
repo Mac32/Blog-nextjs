@@ -5,9 +5,11 @@ export default function AppBar() {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img src="https://i.ibb.co/c2KxvXH/Logo-completo-optimizado.jpg" />
-        </a>
+        <Link href="/">
+          <a className="navbar-item">
+            <img src="https://i.ibb.co/c2KxvXH/Logo-completo-optimizado.jpg" />
+          </a>
+        </Link>
 
         <a
           role="button"

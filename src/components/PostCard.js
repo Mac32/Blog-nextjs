@@ -24,9 +24,8 @@ function PostCard(props) {
 
         <div className="content">
           {props.resumen}
-          <a href="#">#css</a> <a href="#">#responsive</a>
           <br />
-          <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          <time dateTime={props.fecha}>{props.fecha}</time>
         </div>
       </div>
       <footer className="card-footer">
