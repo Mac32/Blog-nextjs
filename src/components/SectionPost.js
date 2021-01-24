@@ -14,7 +14,7 @@ class SectionPost extends React.Component {
         (snapShots) => {
           this.setState({
             items: snapShots.docs.map((doc) => {
-              return { id: doc.id, data: doc.data() };
+                return { id: doc.id, data: doc.data() };
             }),
           });
         },
@@ -24,8 +24,11 @@ class SectionPost extends React.Component {
       );
   }
 
+
   render() {
-    const { items } = this.state;
+    //Filtrado de elementos
+    const filtredData = this.state.items.filter(item => item.data._fl_meta_.schema == "publicacion");
+
     return (
       <article className="sectionProject">
         <div>
@@ -33,8 +36,7 @@ class SectionPost extends React.Component {
           <hr />
         </div>
         <div className="columns is-desktop">
-          {items && items !== undefined
-            ? items.map((item, key) => (
+          {filtredData && filtredData !== undefined ? filtredData.map((item, key) => (
                 <div className="column is-3" key={key}>
                   <PostCard
                     id={item.data.id}
