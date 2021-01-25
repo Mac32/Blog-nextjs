@@ -1,47 +1,62 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
 import db from "../firestoreConfig/FirestoreConfig.js"
+import SectionSkills from "../components/SectionSkills.js"
+
+export default function About() {
+	const [datos, setDatos] = useState([])
+
+	useEffect(() => {
+		db.collection("fl_content")
+			.where("_fl_meta_.schema", "==", "sobreMi")
+			.get().then(
+				(snapShots) => {
+					setDatos(
+						snapShots.docs.map(
+							(doc) => {
+								return { id: doc.id, data: doc.data() };
+							}
+						)
+					);
+				}
+			);
 
 
-export default function About () {
-  const [datos, setDatos] = useState([])
+	});
+	return (
+		<div className="container is-fluid">
 
-    useEffect(() => {
-    	db.collection("fl_content")
-	.get()
-	.then(
-	  (docs) => {
-	    setDatos(docs.docs.map((doc) => {
-	    	return {id: doc.id, data: doc.data() };
-	    }));
-	  }
-	)
-    });
 
-  const filterData = datos.filter(doc => doc.data._fl_meta_.schema == "sobreMi");
-    
-    return (
-      <div className="columns container is-fluid">
+			{
+				(datos && datos.length !== 0) ?
 
-      <div className="column is-one-quarter">
+					(
+						<div className="columns is-fluid">
+							<div className="column is-one-quarter">
+								<figure className="image image is-4by5">
+									<img src={datos[0].data.imagen} />
+								</figure>
+							</div>
 
-      <figure className="image image is-4by5">
+							<div className="column ">
 
-      <img src={filterData.[0].data.imagen}/>
+								<h4 className="title is-4">Sobre mi</h4>
+								<div className="content">
+									<p className="is-medium">
+									{datos[0].data.informacion}
+									</p>
+								</div>
 
-      </figure>
+							</div>
 
-      </div>
+							<SectionSkills tecnologias={datos[0].data.tecnologias}/>
 
-      <div className="column ">
+						</div>
+					)
+					: null
 
-      <h4 className="title is-4">Sobre mi</h4>
-	<div className="content">
-	  <p className="is-medium">
-            {filterData.data.informacion}
-	  </p>
-	</div>
-      </div>
+			}
 
-      </div>
-    );
+
+		</div>
+	);
 }
