@@ -5,9 +5,13 @@ import Footer from '../components/Footer.js'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <div className="has-navbar-fixed-top">
     <Header />
+    <hr />
+    <hr />
     <Component {...pageProps} />
+    <hr />
+    <hr />
     <Footer />
     </div>
   )

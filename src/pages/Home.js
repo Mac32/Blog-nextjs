@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="columns isdesktop">
+        <div className="columns">
           <div className="column">
             <Section />
           </div>

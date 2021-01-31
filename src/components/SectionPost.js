@@ -32,7 +32,7 @@ class SectionPost extends React.Component {
     return (
       <article className="sectionProject">
         <div>
-          <h2 className="title is-2 is-center">Publicaciones</h2>
+          <h2 className="title is-2 has-text-centered">Publicaciones</h2>
           <hr />
         </div>
         <div className="columns is-desktop">
