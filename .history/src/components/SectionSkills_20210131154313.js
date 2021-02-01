@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image'
 import TecnologiaIcono from "./TecnologiaIcono.js"
 
 export default function SectionSkills(props) {
@@ -20,13 +21,13 @@ export default function SectionSkills(props) {
 
       </div>
       <div className="columns is-mobile is-multiline is-centered is-4">
-        <TecnologiaIcono fuente={tecnologiasLinks.html} titulo="HTML" />
-        <TecnologiaIcono fuente={tecnologiasLinks.css} titulo="CSS" />
-        <TecnologiaIcono fuente={tecnologiasLinks.java} titulo="JAVA" />
-        <TecnologiaIcono fuente={tecnologiasLinks.javascript} titulo="JAVASCRIPT" />
-        <TecnologiaIcono fuente={tecnologiasLinks.react} titulo="REACT" />
-        <TecnologiaIcono fuente={tecnologiasLinks.mysql} titulo="MYSQL" />
-        <TecnologiaIcono fuente={tecnologiasLinks.git} titulo="GIT" />
+	<TecnologiaIcono fuente={tecnologiasLinks.html} titulo="HTML"/>
+	<TecnologiaIcono fuente={tecnologiasLinks.css} titulo="CSS"/>
+	<TecnologiaIcono fuente={tecnologiasLinks.java} titulo="JAVA"/>
+	<TecnologiaIcono fuente={tecnologiasLinks.javascript} titulo="JAVASCRIPT"/>
+	<TecnologiaIcono fuente={tecnologiasLinks.react} titulo="REACT"/>
+	<TecnologiaIcono fuente={tecnologiasLinks.mysql} titulo="MYSQL"/>
+	<TecnologiaIcono fuente={tecnologiasLinks.git} titulo="GIT"/>
 
       </div>
 
