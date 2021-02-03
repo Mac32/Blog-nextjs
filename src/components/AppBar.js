@@ -11,7 +11,7 @@ const [isActive, setisActive] = useState(false);
       <div className="navbar-brand">
         <Link href="/">
           <a className="navbar-item">
-            <img src="https://i.ibb.co/c2KxvXH/Logo-completo-optimizado.jpg" />
+            <img src="https://i.ibb.co/FJh5fnW/Logo-completo-min.png" />
           </a>
         </Link>
 
