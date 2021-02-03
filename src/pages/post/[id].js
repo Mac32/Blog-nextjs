@@ -20,7 +20,6 @@ const Post = () => {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log("Document data:", doc.data());
           setPost(doc.data());
         } else {
           // doc.data() will be undefined in this case
@@ -31,7 +30,7 @@ const Post = () => {
         console.log("Error getting document:", error);
       });
     // eslint-disable-next-line
-  }, []);
+  }, [id]);
 
   return (
     <div className="container is-fluid">

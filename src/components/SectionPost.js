@@ -1,5 +1,7 @@
 import React from "react";
-import PostCard from "./PostCard.js";
+import loadable from '@loadable/component'
+
+const PostCard = loadable(() => import('./PostCard.js'));
 import db from "../firestoreConfig/FirestoreConfig.js";
 
 class SectionPost extends React.Component {

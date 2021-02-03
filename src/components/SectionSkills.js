@@ -1,5 +1,7 @@
 import React from "react";
-import TecnologiaIcono from "./TecnologiaIcono.js"
+import loadable from '@loadable/component'
+
+const TecnologiaIcono = loadable (() => import ('./TecnologiaIcono.js'))
 
 export default function SectionSkills(props) {
   const tecnologiasLinks = {
