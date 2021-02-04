@@ -1,64 +1,44 @@
 import React, { useEffect, useState } from "react"
 import db from "../firestoreConfig/FirestoreConfig.js"
-import SectionSkills from "../components/SectionSkills.js"
+
+import loadable from "@loadable/component"
+
+const SectionSkills = loadable(() => import('../components/SectionSkills'))
+const SectionSobreMi = loadable(() => import('../components/SectionSobreMi'))
 
 export default function About() {
 	const [datos, setDatos] = useState([])
 
 	useEffect(() => {
-	  db.collection("fl_content")
-	    .where("_fl_meta_.schema", "==", "sobreMi")
-	    .get().then(
-	      (snapShots) => {
-		setDatos(
-		  snapShots.docs.map(
-		    (doc) => {
-		      return { id: doc.id, data: doc.data() };
-		    }
-		  )
-		);
-	      }
-	    );
+		db.collection("fl_content")
+			.where("_fl_meta_.schema", "==", "sobreMi")
+			.get().then(
+				(snapShots) => {
+					setDatos(
+						snapShots.docs.map(
+							(doc) => {
+								return { id: doc.id, data: doc.data() };
+							}
+						)
+					);
+				}
+			);
 	});
-  return (
-    <div className="container is-fluid">
-    {
-      (datos && datos.length !== 0) ?
+	return (
+		<div>
+			{
+				(datos && datos.length !== 0) ?
+					(
+						<SectionSobreMi fuenteImagen={datos[0].data.imagen} informacion={datos[0].data.informacion} />
+					)
+					: null
 
-      (
-	<div className="columns is-fluid">
-
-	  <div className="column is-one-quarter">
-
-	    <figure className="image is-square">
-
-	      <img className="is-rounded" src={datos[0].data.imagen} />
-	    </figure>
-
-	  </div>
-
-	<div className="column ">
-
-	  <h4 className="title is-4">Sobre mi</h4>
-	  <div className="content">
-	    <p className="is-medium">
-	      {datos[0].data.informacion}
-	    </p>
-	</div>
-
-	</div>
-
-
-	</div>
-	)
-	: null
-
-	}
-    {
-      (datos && datos.length !== 0) ? 
-	(<SectionSkills tecnologias={datos[0].data.tecnologias}/>)
-      :null
-    }
-</div>
+			}
+			{
+				(datos && datos.length !== 0) ?
+					(<SectionSkills tecnologias={datos[0].data.tecnologias} />)
+					: null
+			}
+		</div>
 	);
 }
