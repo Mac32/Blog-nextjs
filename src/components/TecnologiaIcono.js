@@ -1,12 +1,15 @@
 import React from "react"
 
-export default function TecnologiaIcono(props) {
-  return(
-    <div className="column is-narrow ">
-	<figure className="image is-128x128" >
-	  <img src={props.fuente} />
-	  <h4 className="title has-text-centered is-5">{props.titulo}</h4>
-	</figure>
+export default function TecnologiaIcono({fuente, titulo}) {
+  return (
+    <div className="flex shadow m-1 rounded-md">
+      <figure className="w-1/3  bg-gray-100 rounded-l-md" >
+        <img src={fuente} />
+      </figure>
+      <div className="my-auto px-4">
+        <h4 className="text-gray-800 text-lg">{titulo}</h4>
+        <hr />
+      </div>
     </div>
   );
 }

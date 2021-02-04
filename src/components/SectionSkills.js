@@ -2,7 +2,7 @@ import React from "react";
 import loadable from '@loadable/component'
 
 const TecnologiaIcono = loadable (() => import ('./TecnologiaIcono.js'))
-
+const H2 = loadable(() => import('./elements/H2'))
 export default function SectionSkills(props) {
   const tecnologiasLinks = {
     html: "https://i.ibb.co/BNRv1Ph/file-type-html-icon-130541-min.png",
@@ -17,11 +17,22 @@ export default function SectionSkills(props) {
     <article>
       <br />
       <div>
-        <h2 className="title has-text-centered">Habilidades</h2>
-        <hr />
+        <H2 texto="Habilidades"/>
 
       </div>
-      <div className="columns is-mobile is-multiline is-centered is-4">
+      <div className="
+      grid 
+      grid-cols-1 
+      sm:mx-4 
+      sm:grid-cols-2 
+      md:grid-cols-3 
+      md:mx-4 
+      lg:grid-cols-4 
+      xl:grid-cols-5 
+      2xl:grid-cols-5
+      gap-3 
+      mx-1"
+      >
         <TecnologiaIcono fuente={tecnologiasLinks.html} titulo="HTML" />
         <TecnologiaIcono fuente={tecnologiasLinks.css} titulo="CSS" />
         <TecnologiaIcono fuente={tecnologiasLinks.java} titulo="JAVA" />
