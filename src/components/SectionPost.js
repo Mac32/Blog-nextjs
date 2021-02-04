@@ -1,8 +1,9 @@
 import React from "react";
 import loadable from '@loadable/component'
+import db from "../firestoreConfig/FirestoreConfig.js";
 
 const PostCard = loadable(() => import('./PostCard.js'));
-import db from "../firestoreConfig/FirestoreConfig.js";
+const H2 = loadable(() => import('./elements/H2'))
 
 class SectionPost extends React.Component {
   state = {
@@ -33,10 +34,7 @@ class SectionPost extends React.Component {
 
     return (
       <article className="sectionProject">
-        <div>
-          <h2 className="title is-2 has-text-centered">Publicaciones</h2>
-          <hr />
-        </div>
+          <H2 texto="Publicaciones" />
         <div className="columns is-desktop">
           {filtredData && filtredData !== undefined ? filtredData.map((item, key) => (
                 <div className="column is-3" key={key}>

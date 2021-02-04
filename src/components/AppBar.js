@@ -81,13 +81,10 @@ export default function AppBar() {
      {/* Menu para pantallas pequeñas */}
       <div id="menuMobil" className="hidden sm:hidden">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link href="/">
-            <ButtonMenu nombre="Inicio" />
-          </Link>
+          
+            <ButtonMenu texto="Inicio" ruta="/" />
 
-          <Link href="/About">
-            <ButtonMenu nombre="Sobre Mi" />
-          </Link>
+            <ButtonMenu texto="Sobre Mi" ruta="/About" />
         </div>
       </div>
     </nav>

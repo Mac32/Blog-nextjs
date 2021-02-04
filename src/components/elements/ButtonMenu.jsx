@@ -1,7 +1,9 @@
-import React from 'react';
+import React from 'react'
+import Link from 'next/link'
 
-export default function ButtonMenu({ nombre }) {
+export default function ButtonMenu({ texto, ruta }) {
   return (
+<Link href={ruta}>
 
     <a className="
     cursor-pointer
@@ -13,7 +15,8 @@ export default function ButtonMenu({ nombre }) {
     text-base 
     font-medium 
     hover:bg-gray-700">
-      {nombre}
+      {texto}
     </a>
+    </Link>
   )
 }
