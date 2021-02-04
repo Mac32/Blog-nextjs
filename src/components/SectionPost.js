@@ -33,11 +33,23 @@ class SectionPost extends React.Component {
     const filtredData = this.state.items.filter(item => item.data._fl_meta_.schema == "publicacion");
 
     return (
-      <article className="container mx-auto md:px-10">
+      <article className="
+      container 
+      mx-auto 
+      md:px-10 
+      rounded-lg 
+      shadow-md mb-6">
           <H2 texto="Publicaciones" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+        <div className="
+        grid 
+        grid-cols-1 
+        md:grid-cols-2 
+        lg:grid-cols-3 
+        xl:grid-cols-4 
+        2xl:grid-cols-5 
+        gap-4">
           {filtredData && filtredData !== undefined ? filtredData.map((item, key) => (
-                <div className="column is-3" key={key}>
+                <div className="mt-6" key={key}>
                   <PostCard
                     id={item.data.id}
                     titulo={item.data.titulo}

@@ -65,7 +65,7 @@ export default function AppBar() {
 
             <div className="ml-3 relative">
               <div>
-                <Link href="/">
+                <Link href="/About">
 
                   <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
                     <img className="h-8 w-8 rounded-full" src="https://i.ibb.co/N3d97xK/foto-perfil-min.jpg" alt="" />
