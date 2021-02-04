@@ -5,18 +5,16 @@ export default function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
+      <div className="bg-gray-800 flex">
         <Link href="/">
           <img
             className="navbar-item"
-            src="https://i.ibb.co/c2KxvXH/Logo-completo-optimizado.jpg"
+            src="https://i.ibb.co/FJh5fnW/Logo-completo-min.png"
             width="112"
             height="28"
           />
         </Link>
-        <div> Copyright© {year} Alberth Bompart </div>;
+        <div className="text-gray-300 my-auto"> Copyright© {year} Alberth Bompart </div>
       </div>
-    </nav>
   );
 }
