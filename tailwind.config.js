@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./src/**/*.tsx"],
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -7,5 +7,10 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    "postcss-import",
+    "tailwindcss",
+    "autoprefixer",
+    ...(process.env.NODE_ENV === "production" ? [purgecss] : []),
+  ],
 }
