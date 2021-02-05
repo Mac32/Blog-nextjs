@@ -1,11 +1,18 @@
 import React from "react";
 import db from "../../firestoreConfig/FirestoreConfig.js";
-//Importacion necesaria para capturar los datos del enlace dinamico
 import { useRouter } from "next/router";
-import PostFooter from "../../components/PostFooter.js";
+import loadable from '@loadable/component'
+
+const PostFooter = loadable(() => import('../../components/PostFooter'))
+const H2 = loadable(() => import('../../components/elements/H2'))
 
 const Post = () => {
   const [post, setPost] = React.useState([]);
+
+  const backgroundImage = {
+    color: 'blue',
+    backgroundImage: 'url(' + post.urlImage + ')',
+  };
 
   //Implementacion de useRouter para poder capturar la variable id y poder usarla
   const router = useRouter();
@@ -33,18 +40,15 @@ const Post = () => {
   }, [id]);
 
   return (
-    <div className="container is-fluid">
+    <div className="container mx-auto md:w-4/5 shadow-md m-6">
       <div>
-        <hr />
-        <div>
-          <h2 className="title is-2 is-center">{post.titulo} </h2>
-          <hr />
+        <div className="h-48 bg-center bg-cover rounded-t-md" style={backgroundImage}>
+          <img className="hidden" src={post.urlImage} alt={post.descriptionImage} />
         </div>
-        <figure className="image is-3by1">
-          <img src={post.urlImage} alt={post.descriptionImage} />
-        </figure>
-        <div dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
+        <H2 texto={post.titulo} />
+        <div className="m-6 sm:m-9 text-gray-700" dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
       </div>
+      <hr />
       <PostFooter autor={post.autor} />
     </div>
   );

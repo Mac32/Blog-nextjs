@@ -1,21 +1,12 @@
 import React from "react";
+import loadable from '@loadable/component'
 
-export default function PostFooter(props) {
+const ArticuloAutor = loadable (() => import ('../components/elements/ArticuloAutor'))
+
+export default function PostFooter({autor}) {
   return (
-    <div className="media footer">
-      <div className="media-left">
-        <figure className="image is-64x64">
-          <img
-            className="is-rounded"
-            src="https://i.ibb.co/N3d97xK/foto-perfil-min.jpg"
-            alt="Imagen de perfil del Autor"
-          />
-        </figure>
-      </div>
-      <div className="media-content">
-        <p className="title is-4">{props.autor}</p>
-        <p className="subtitle is-6">@{props.autor}</p>
-      </div>
+    <div className="ml-9 ">
+      <ArticuloAutor autor={autor} subtitulo="Fundador del Blog"/>
     </div>
   );
 }

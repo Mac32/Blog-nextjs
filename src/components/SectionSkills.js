@@ -3,7 +3,8 @@ import loadable from '@loadable/component'
 
 const TecnologiaIcono = loadable (() => import ('./TecnologiaIcono.js'))
 const H2 = loadable(() => import('./elements/H2'))
-export default function SectionSkills(props) {
+
+export default function SectionSkills() {
   const tecnologiasLinks = {
     html: "https://i.ibb.co/BNRv1Ph/file-type-html-icon-130541-min.png",
     css: "https://i.ibb.co/4j97cVV/file-type-css-icon-130661-min.png",

@@ -1,5 +1,7 @@
-import React, {Fragment} from "react";
-import SectionPost from "./SectionPost.js";
+import React from "react";
+import loadable from '@loadable/component'
+
+const SectionPost = loadable(() => import ('./SectionPost'))
 
 export default function Section() {
   return (

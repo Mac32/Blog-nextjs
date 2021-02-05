@@ -1,5 +1,7 @@
 import React from "react";
-import AppBar from "./AppBar.js";
+import loadable from '@loadable/component'
+
+const AppBar = loadable (() => import ("./AppBar.js"))
 
 export default function Header() {
     return(

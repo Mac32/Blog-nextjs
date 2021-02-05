@@ -1,5 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import loadable from '@loadable/component'
+
+const ArticuloAutor = loadable (() => import ('./elements/ArticuloAutor'))
 
 function PostCard(props) {
   const fechaFormateada = new Date(props.fecha).toLocaleDateString()
@@ -23,18 +26,7 @@ function PostCard(props) {
           {props.resumen}
         </div>
         {/* Autor */}
-        <div className="flex flex-row flex-wrap py-6">
-          <Link href="/">
-            <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
-              <img className="h-12 w-12 rounded-full" src="https://i.ibb.co/N3d97xK/foto-perfil-min.jpg" alt="" />
-            </button>
-          </Link>
-          <div className="ml-4" >
-            <p className="text-gray-800">{props.autor}</p>
-            {/* Fecha */}
-            <em><time className="text-gray-700 " dateTime={fechaFormateada}>{fechaFormateada}</time></em>
-          </div>
-        </div>
+        <ArticuloAutor autor={props.autor} subtitulo={fechaFormateada} />
       </div>
     </div>
   );

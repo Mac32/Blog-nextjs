@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import loadable from '@loadable/component'
 import Link from "next/link";
-import ButtonMenu from "./elements/ButtonMenu"
+
+const ButtonMenu = loadable(() => import ("./elements/ButtonMenu"))
+const Avatar = loadable(() => import('./elements/Avatar'))
+
 export default function AppBar() {
 
   const eventoMenu = () => {
-    const menu = document.querySelector("#menuMobil")
-    const iconoX = document.querySelector("#iconoX")
-    const iconoBurger = document.querySelector("#iconoBurger")
-    menu.classList.toggle("hidden")
-    iconoX.classList.toggle("hidden")
-    iconoBurger.classList.toggle("hidden")
+    document.querySelector("#menuMobil").classList.toggle("hidden")
+    document.querySelector("#iconoX").classList.toggle("hidden")
+    document.querySelector("#iconoBurger").classList.toggle("hidden")
+    
   }
 
 
@@ -65,12 +67,7 @@ export default function AppBar() {
 
             <div className="ml-3 relative">
               <div>
-                <Link href="/About">
-
-                  <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
-                    <img className="h-8 w-8 rounded-full" src="https://i.ibb.co/N3d97xK/foto-perfil-min.jpg" alt="" />
-                  </button>
-                </Link>
+                <Avatar />
               </div>
 
             </div>
