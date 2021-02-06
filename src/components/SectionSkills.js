@@ -6,13 +6,13 @@ const H2 = loadable(() => import('./elements/H2'))
 
 export default function SectionSkills() {
   const tecnologiasLinks = {
-    html: "https://i.ibb.co/BNRv1Ph/file-type-html-icon-130541-min.png",
-    css: "https://i.ibb.co/4j97cVV/file-type-css-icon-130661-min.png",
-    java: "https://i.ibb.co/VBRmdfR/java-22523-min.png",
-    javascript: "https://i.ibb.co/Bqb3SQV/javascript-icon-130900-min.png",
-    react: "https://i.ibb.co/bzrsR0H/react-original-wordmark-logo-icon-146375-min.png",
-    mysql: "https://i.ibb.co/hdvQwBZ/mysql-original-wordmark-logo-icon-146417-min.png",
-    git: "https://i.ibb.co/D1K6nzK/git-original-wordmark-logo-icon-146510-min.png"
+    html: "https://i.ibb.co/2cwbMw1/html-original-wordmark-logo-icon-146478.png",
+    css: "https://i.ibb.co/9pN706X/css-original-wordmark-logo-icon-146576.png",
+    java: "https://i.ibb.co/jTBgCQt/java-original-wordmark-logo-icon-146459.png",
+    javascript: "https://i.ibb.co/mDxdHrs/javascript-icon-130900-min.png",
+    react: "https://i.ibb.co/4K9q6P4/react-original-wordmark-logo-icon-146375.png",
+    mysql: "https://i.ibb.co/y8m06pW/mysql-original-wordmark-logo-icon-146417.png",
+    git: "https://i.ibb.co/m5NcHX7/git-original-wordmark-logo-icon-146510.png"
   }
   return (
     <article>
