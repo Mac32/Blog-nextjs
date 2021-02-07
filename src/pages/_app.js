@@ -8,17 +8,19 @@ const Footer = loadable(() => import('../components/Footer'))
 function MyApp({ Component, pageProps }) {
   return (
     <div className="has-navbar-fixed-top">
-      <Head>
-        <title>Blog - Código Fuente</title>
-        <link rel="icon" href="/logo.ico" />
-      </Head>
-      <Header />
-      <hr />
-      <hr />
-      <Component {...pageProps} />
-      <hr />
-      <hr />
-      <Footer />
+    <Head>
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Blog - Código Fuente</title>
+    <link rel="icon" href="/logo.ico" />
+    </Head>
+    <Header />
+    <hr />
+    <hr />
+    <Component {...pageProps} />
+    <hr />
+    <hr />
+    <Footer />
     </div>
   )
 }
