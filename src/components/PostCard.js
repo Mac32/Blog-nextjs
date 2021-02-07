@@ -11,14 +11,14 @@ function PostCard(props) {
       {/* Imagen */}
       <Link href={`/post/${props.id}`}>
         <figure >
-          <img className="rounded-t-md" src={props.imagen} alt="Placeholder image" />
+          <img className="rounded-t-md cursor-pointer" src={props.imagen} alt="Placeholder image" />
         </figure>
       </Link>
       {/* Contenido */}
       <div className="m-6">
         {/*Título*/}
         <Link href={`/post/${props.id}`}>
-          <h3 className="text-2xl text-gray-800">{props.titulo}</h3>
+          <h3 className="text-2xl text-gray-800 cursor-pointer">{props.titulo}</h3>
         </Link>
         <hr />
         {/* Resumen */}

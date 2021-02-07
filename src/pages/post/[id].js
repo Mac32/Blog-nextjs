@@ -6,52 +6,62 @@ import loadable from '@loadable/component'
 const PostFooter = loadable(() => import('../../components/PostFooter'))
 const H2 = loadable(() => import('../../components/elements/H2'))
 
-const Post = () => {
+const Post = ({res}) => {
   const [post, setPost] = React.useState([]);
-
   const backgroundImage = {
     color: 'blue',
-    backgroundImage: 'url(' + post.urlImage + ')',
+    backgroundImage: 'url(' + res.urlImage + ')',
   };
 
-  //Implementacion de useRouter para poder capturar la variable id y poder usarla
-  const router = useRouter();
-  const { id } = router.query;
-
   React.useEffect(() => {
-    //Variable para establecer en que colleccion debe buscar y el documento a encontrar establecido de forma dinamica
-    const docRef = db.collection("fl_content").doc(id);
-
-    //Se obtiene el documento
-    docRef
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          setPost(doc.data());
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-      })
-      .catch(function (error) {
-        console.log("Error getting document:", error);
-      });
-    // eslint-disable-next-line
-  }, [id]);
+    setPost(res)
+  }, []);
 
   return (
     <div className="container mx-auto md:w-4/5 shadow-md m-6">
-      <div>
-        <div className="h-48 bg-center bg-cover rounded-t-md" style={backgroundImage}>
-          <img className="hidden" src={post.urlImage} alt={post.descriptionImage} />
-        </div>
-        <H2 texto={post.titulo} />
-        <div className="m-6 sm:m-9 text-gray-700" dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
-      </div>
-      <hr />
-      <PostFooter autor={post.autor} />
+    <div>
+    <div className="h-48 bg-center bg-cover rounded-t-md" style={backgroundImage}>
+    <img className="hidden" src={post.urlImage} alt={post.descriptionImage} />
+    </div>
+    <H2 texto={post.titulo} />
+    <div className="m-6 sm:m-9 text-gray-700" dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
+    </div>
+    <hr />
+    <PostFooter autor={post.autor} />
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  return {
+    // Only `/posts/1` and `/posts/2` are generated at build time
+    paths: [],
+    // Enable statically generating additional pages
+    // For example: `/posts/3`
+    fallback: true,
+  }
+}
+
+export async function getStaticProps({params}) {
+  const {id} = params
+  const docRef = db.collection("fl_content").doc(id);
+  //Se obtiene el documento
+  const res = await docRef.get().then(doc => {
+    const datos = doc.data()
+    return({
+      urlImage: datos.urlImage,
+      descriptionImage: datos.descriptionImage,
+      titulo: datos.titulo,
+      contenido: datos.contenido,
+      autor: datos.autor,
+    })
+  });
+
+  return {
+    props: {
+      res,
+    },
+  }
+}
 
 export default Post;
