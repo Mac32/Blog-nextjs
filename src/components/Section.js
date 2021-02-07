@@ -1,7 +1,7 @@
 import React from "react";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const SectionPost = loadable(() => import ('./SectionPost'))
+const SectionPost = dynamic(import ('./SectionPost'))
 
 export default function Section() {
   return (

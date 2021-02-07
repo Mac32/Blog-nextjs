@@ -1,5 +1,7 @@
 import React from "react";
-import PostCard from "./PostCard.js";
+import dynamic from 'next/dynamic'
+
+const PostCard = dynamic(import( "./PostCard"))
 
 class SectionProject extends React.Component {
   render() {

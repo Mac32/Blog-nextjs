@@ -1,7 +1,7 @@
 import React from "react";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const ArticuloAutor = loadable (() => import ('../components/elements/ArticuloAutor'))
+const ArticuloAutor = dynamic(import ('../components/elements/ArticuloAutor'))
 
 export default function PostFooter({autor}) {
   return (

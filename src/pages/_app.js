@@ -1,9 +1,9 @@
 import '../styles/globals.css';
 import Head from 'next/head'
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const Header = loadable(() => import('../components/Header'))
-const Footer = loadable(() => import('../components/Footer'))
+const Header = dynamic(import('../components/Header'))
+const Footer = dynamic(import('../components/Footer'))
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const ArticuloAutor = loadable (() => import ('./elements/ArticuloAutor'))
+const ArticuloAutor = dynamic(import ('./elements/ArticuloAutor'))
 
 function PostCard(props) {
   const fechaFormateada = new Date(props.fecha).toLocaleDateString()

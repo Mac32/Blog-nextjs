@@ -1,7 +1,7 @@
 import React from 'react';
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const H2 = loadable(() => import('../components/elements/H2'))
+const H2 = dynamic(import('../components/elements/H2'))
 
 export default function SectionSobreMi({ informacion, fuenteImagen }) {
   return (

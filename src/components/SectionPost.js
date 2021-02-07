@@ -1,9 +1,9 @@
 import React from "react";
-import loadable from '@loadable/component'
-import db from "../firestoreConfig/FirestoreConfig.js";
+import dynamic from 'next/dynamic'
+import db from "../firestoreConfig/FirestoreConfig";
 
-const PostCard = loadable(() => import('./PostCard.js'));
-const H2 = loadable(() => import('./elements/H2'))
+const PostCard = dynamic (import('./PostCard'));
+const H2 = dynamic (import('./elements/H2'))
 
 class SectionPost extends React.Component {
   state = {

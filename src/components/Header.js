@@ -1,7 +1,7 @@
 import React from "react";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const AppBar = loadable (() => import ("./AppBar.js"))
+const AppBar = dynamic(import ("./AppBar"))
 
 export default function Header() {
     return(

@@ -1,7 +1,7 @@
 import React from 'react';
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const Avatar = loadable(() => import('./Avatar'))
+const Avatar = dynamic(import('./Avatar'))
 
 export default function ArticuloAutor({ autor, subtitulo = "" }) {
   const date_regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;

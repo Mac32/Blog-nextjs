@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 import Link from "next/link";
 
-const ButtonMenu = loadable(() => import ("./elements/ButtonMenu"))
-const Avatar = loadable(() => import('./elements/Avatar'))
+const ButtonMenu = dynamic(import ("./elements/ButtonMenu"))
+const Avatar = dynamic(import('./elements/Avatar'))
 
 export default function AppBar() {
 

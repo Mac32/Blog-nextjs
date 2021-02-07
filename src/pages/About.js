@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import db from "../firestoreConfig/FirestoreConfig.js"
 
-import loadable from "@loadable/component"
+import dynamic from "next/dynamic"
 
-const SectionSkills = loadable(() => import('../components/SectionSkills'))
-const SectionSobreMi = loadable(() => import('../components/SectionSobreMi'))
+const SectionSkills = dynamic(import('../components/SectionSkills'))
+const SectionSobreMi = dynamic(import('../components/SectionSobreMi'))
 
 export default function About() {
   const [datos, setDatos] = useState([])

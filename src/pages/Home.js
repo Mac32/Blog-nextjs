@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const Section = loadable (() => import('../components/Section'))
+const Section = dynamic(import('../components/Section'))
 
 class Home extends Component {
   render() {

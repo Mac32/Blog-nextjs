@@ -1,8 +1,8 @@
 import React from "react";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const TecnologiaIcono = loadable (() => import ('./TecnologiaIcono.js'))
-const H2 = loadable(() => import('./elements/H2'))
+const TecnologiaIcono = dynamic(import ('./TecnologiaIcono'))
+const H2 = dynamic(import('./elements/H2'))
 
 export default function SectionSkills() {
   const tecnologiasLinks = {
