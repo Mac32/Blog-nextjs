@@ -46,9 +46,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { id } = params
-  const docRef = db.collection("fl_content").doc(id);
   //Se obtiene el documento
-  const res = await docRef.get().then(doc => {
+  const res = await db.collection("fl_content").doc(id).get().then(doc => {
     const datos = doc.data()
     return ({
       urlImage: datos.urlImage,
@@ -63,6 +62,7 @@ export async function getStaticProps({ params }) {
     props: {
       res,
     },
+    revalidate: 1,
   }
 }
 

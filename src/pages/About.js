@@ -6,39 +6,34 @@ import dynamic from "next/dynamic"
 const SectionSkills = dynamic(import('../components/SectionSkills'))
 const SectionSobreMi = dynamic(import('../components/SectionSobreMi'))
 
-export default function About() {
-  const [datos, setDatos] = useState([])
+export default function About({sobreMi}) {
+  return (
+    <>
+    {
+    <div>
+	<SectionSobreMi fuenteImagen={sobreMi.imagen} informacion={sobreMi.informacion} />
+      
+	<SectionSkills />
+    </div>
+    }
+    </>
+  );
+}
 
-  useEffect(() => {
-    db.collection("fl_content")
-      .where("_fl_meta_.schema", "==", "sobreMi")
+export async function getStaticProps() {
+	const sobreMi = await db.collection("fl_content")
+      .doc("p04tDANF8rsUm2xFSaLn")
       .get().then(
-	(snapShots) => {
-	  setDatos(
-	    snapShots.docs.map(
-	      (doc) => {
-		return { id: doc.id, data: doc.data() };
-	      }
-	    )
-	  );
+	(doc) => {
+		return { imagen: doc.data().imagen, informacion: doc.data().informacion };
 	}
       );
-  });
-  return (
-    <div>
-    {
-      (datos && datos.length !== 0) ?
-      (
-	<SectionSobreMi fuenteImagen={datos[0].data.imagen} informacion={datos[0].data.informacion} />
-      )
-      : null
 
-    }
-    {
-      (datos && datos.length !== 0) ?
-	(<SectionSkills tecnologias={datos[0].data.tecnologias} />)
-	: null
-    }
-    </div>
-  );
+  return {
+    props: {
+    	sobreMi,
+    },
+    revalidate: 1,
+  }
+
 }

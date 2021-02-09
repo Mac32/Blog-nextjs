@@ -41,7 +41,7 @@ export default function AppBar() {
               <a>
 
                 <div className="flex-shrink-0 flex items-center">
-                  <img className="block lg:hidden h-8 w-auto" src="https://i.ibb.co/FJh5fnW/Logo-completo-min.png" alt="Workflow" />
+                  <img className="block h-8 w-auto" src="https://i.ibb.co/FJh5fnW/Logo-completo-min.png" alt="Workflow" />
                 </div>
               </a>
             </Link>

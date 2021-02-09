@@ -46,6 +46,7 @@ export async function getStaticProps(){
   return{
     props: {
     	datosPublicaciones,
-    }
+    },
+    revalidate: 1,
   }
 }
