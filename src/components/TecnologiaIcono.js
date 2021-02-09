@@ -7,7 +7,7 @@ export default function TecnologiaIcono({fuente, titulo}) {
         <img src={fuente} />
       </figure>
       <div className="my-auto px-4">
-        <h4 className="text-gray-800 text-lg">{titulo}</h4>
+  <h4 className="text-gray-800 text-lg">{titulo}</h4>
         <hr />
       </div>
     </div>

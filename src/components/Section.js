@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic'
 
 const SectionPost = dynamic(import ('./SectionPost'))
 
-export default function Section() {
+export default function Section({datosPublicaciones}) {
   return (
-      <SectionPost />
+      <SectionPost datos={datosPublicaciones}/>
   );
 }

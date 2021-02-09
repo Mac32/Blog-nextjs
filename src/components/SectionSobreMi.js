@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import dynamic from 'next/dynamic'
 
 const H2 = dynamic(import('../components/elements/H2'))

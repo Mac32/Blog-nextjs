@@ -1,10 +1,9 @@
 import React from "react";
 import db from "../../firestoreConfig/FirestoreConfig.js";
-import { useRouter } from "next/router";
-import loadable from '@loadable/component'
+import dynamic from 'next/dynamic'
 
-const PostFooter = loadable(() => import('../../components/PostFooter'))
-const H2 = loadable(() => import('../../components/elements/H2'))
+const PostFooter = dynamic(import('../../components/PostFooter'))
+const H2 = dynamic(import('../../components/elements/H2'))
 
 const Post = ({ res }) => {
   const [post, setPost] = React.useState([]);

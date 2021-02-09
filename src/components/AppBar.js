@@ -26,23 +26,22 @@ export default function AppBar() {
 
             {/* Iconos del boton de menu */}
               <svg id="iconoBurger" className=" h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
              
               <svg id="iconoX" className=" hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
           {/* Menu para pantallas grandes */}
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <Link href="">
+            <Link href="/">
               <a>
 
                 <div className="flex-shrink-0 flex items-center">
                   <img className="block lg:hidden h-8 w-auto" src="https://i.ibb.co/FJh5fnW/Logo-completo-min.png" alt="Workflow" />
-                  <img className="hidden lg:block h-8 w-auto" src="https://i.ibb.co/FJh5fnW/Logo-completo-min.png" alt="Workflow" />
                 </div>
               </a>
             </Link>
