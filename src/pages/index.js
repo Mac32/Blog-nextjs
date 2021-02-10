@@ -1,5 +1,5 @@
 import Head from "next/head";
-import db from "../pages/api/firestoreConfig"
+import db from "../firestoreConfig/FirestoreConfig"
 import dynamic from "next/dynamic"
 
 const Section = dynamic(import('../components/Section'))

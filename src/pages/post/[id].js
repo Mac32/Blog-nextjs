@@ -1,5 +1,5 @@
 import React from "react";
-import db from "../../pages/api/firestoreConfig/FirestoreConfig";
+import db from "../../firestoreConfig/FirestoreConfig";
 import dynamic from 'next/dynamic'
 
 const PostFooter = dynamic(import('../../components/PostFooter'))
@@ -7,7 +7,6 @@ const H2 = dynamic(import('../../components/elements/H2'))
 
 const Post = ({ res }) => {
   const [post, setPost] = React.useState([]);
-
 
   React.useEffect(() => {
     setPost(res)
