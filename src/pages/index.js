@@ -9,6 +9,7 @@ export default function App({datosPublicaciones}) {
     <>
       <Head>
         <meta name="google-site-verification" content="faPHg-GaQx67jTHLz60EFWUQoeoHdXJOaeGYR6q2Dm8" />
+	<meta name="description" content="Blog de desarrollo web con informacion precisa y detallada por programador web en los diferentes lenguajes y tecnologias disponibles (Javascript, Java, HTML CSS, ReacJS, Next)"/>
         <title>Blog - Código Fuente</title>
         <link rel="icon" href="/logo.ico" />
       </Head>

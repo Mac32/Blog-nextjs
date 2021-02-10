@@ -1,6 +1,7 @@
 import React from "react";
 import db from "../../firestoreConfig/FirestoreConfig";
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
@@ -13,6 +14,12 @@ const Post = ({ res }) => {
   }, [res]);
 
   return (
+    <>
+    <Head>
+
+    <meta name="description" content={post.resumen}/>
+
+    </Head>
     <div className="container mx-auto md:w-4/5 shadow-md m-6">
 {
     post && post !== undefined ?
@@ -30,6 +37,7 @@ const Post = ({ res }) => {
       : null
 }
     </div>
+  </>
   );
 };
 
@@ -51,6 +59,7 @@ export async function getStaticProps({ params }) {
     return ({
       urlImage: datos.urlImage,
       descriptionImage: datos.descriptionImage,
+      resumen: datos.resumen,
       titulo: datos.titulo,
       contenido: datos.contenido,
       autor: datos.autor,
