@@ -1,5 +1,5 @@
 import React from "react";
-import db from "../../firestoreConfig/FirestoreConfig.js";
+import db from "../../pages/api/firestoreConfig/FirestoreConfig";
 import dynamic from 'next/dynamic'
 
 const PostFooter = dynamic(import('../../components/PostFooter'))
