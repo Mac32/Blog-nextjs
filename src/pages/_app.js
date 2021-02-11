@@ -6,6 +6,7 @@ const Footer = dynamic(import('../components/Footer'))
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
     <div className="has-navbar-fixed-top">
     <Head>
 
@@ -21,6 +22,8 @@ function MyApp({ Component, pageProps }) {
     <hr />
     <Footer />
     </div>
+      <script id="dsq-count-scr" src="//codigosfuente.disqus.com/count.js" async></script>
+    </>
   )
 }
 
