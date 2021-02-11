@@ -22,7 +22,6 @@ function MyApp({ Component, pageProps }) {
     <hr />
     <Footer />
     </div>
-      <script id="dsq-count-scr" src="//codigosfuente.disqus.com/count.js" async></script>
     </>
   )
 }

@@ -12,6 +12,7 @@
   "dependencies": {
     "@loadable/component": "^5.14.1",
     "caniuse-lite": "^1.0.30001185",
+    "disqus-react": "^1.0.11",
     "firebase": "^8.2.6",
     "next": "10.0.5",
     "react": "17.0.1",
