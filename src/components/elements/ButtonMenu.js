@@ -8,6 +8,7 @@ export default function ButtonMenu({ texto, ruta }) {
     <a className="
     cursor-pointer
     text-gray-300
+    font-extrabold
     block text-center 
     px-3 
     py-2 

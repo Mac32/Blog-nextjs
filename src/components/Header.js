@@ -5,7 +5,9 @@ const AppBar = dynamic(import ("./AppBar"))
 
 export default function Header() {
     return(
+      <>
     <AppBar />
+</>
     );
 }
 

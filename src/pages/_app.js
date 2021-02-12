@@ -11,12 +11,12 @@ function MyApp({ Component, pageProps }) {
     <Head>
 
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>*/}
     <title>Blog - Código Fuente</title>
     <link rel="icon" href="/logo.ico" />
     </Head>
     <Header />
-    <hr />
-    <hr />
     <Component {...pageProps} />
     <hr />
     <hr />
