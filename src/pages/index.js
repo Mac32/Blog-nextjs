@@ -3,6 +3,7 @@ import db from "../firestoreConfig/FirestoreConfig"
 import dynamic from "next/dynamic"
 
 const Section = dynamic(import('../components/Section'))
+const Hero = dynamic(import('../components/Hero'))
 
 export default function App({datosPublicaciones}) {
   return (
@@ -13,6 +14,8 @@ export default function App({datosPublicaciones}) {
         <title>Blog - Código Fuente</title>
         <link rel="icon" href="/logo.ico" />
       </Head>
+
+    <Hero />
     <Section datosPublicaciones={datosPublicaciones} />
   
     </>
