@@ -19,7 +19,7 @@ const Post = ({ res }) => {
     <Head>
 
     <meta name="description" content={post.resumen}/>
-    <title>Post: {post.titulo}</title>
+    <title>{post.titulo}</title>
     </Head>
     <div className="container mx-auto md:w-4/5 shadow-md m-6">
 {
