@@ -5,7 +5,7 @@ export default function Hero() {
 
 useEffect(() => {
   //TODO agregar funciones de animaciones
-gsap.to(".mover", {duration: 2, x: 300});
+//gsap.to(".mover", {duration: 2, x: 300});
 })
 
 return(
