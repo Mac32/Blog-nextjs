@@ -44,9 +44,28 @@ const Post = ({ res }) => {
 };
 
 export async function getStaticPaths() {
+  
+
+  let paths = []
+
+    await db.collection("fl_content")
+      .get()
+      .then(
+        (publicaciones) => {
+            publicaciones.docs.map((doc) => {
+	      if(doc.data()._fl_meta_.schema === "publicacion"){
+		paths.push({
+		  params: {
+		    id: doc.id,
+		  }
+		})
+	      }
+            })
+        })
+console.log(paths)
   return {
     // Only `/posts/1` and `/posts/2` are generated at build time
-    paths: [],
+    paths,
     // Enable statically generating additional pages
     // For example: `/posts/3`
     fallback: true,
