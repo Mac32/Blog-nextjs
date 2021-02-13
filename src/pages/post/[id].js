@@ -44,7 +44,6 @@ const Post = ({ res }) => {
 };
 
 export async function getStaticPaths() {
-  
 
   let paths = []
 
@@ -62,7 +61,6 @@ export async function getStaticPaths() {
 	      }
             })
         })
-console.log(paths)
   return {
     // Only `/posts/1` and `/posts/2` are generated at build time
     paths,
