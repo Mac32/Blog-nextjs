@@ -18,11 +18,11 @@ function PostCard(props) {
       <div className="m-6">
         {/*Título*/}
         <Link href={`/post/${props.id}`}>
-          <h3 className="text-2xl h-20 text-gray-800 cursor-pointer">{props.titulo}</h3>
+          <h3 className="text-2xl text-gray-800 cursor-pointer">{props.titulo}</h3>
         </Link>
         <hr />
         {/* Resumen */}
-        <div className="my-3 h-20 text-gray-700">
+        <div className="my-3 text-gray-700">
           {props.resumen}
         </div>
         {/* Autor */}
