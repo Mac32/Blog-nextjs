@@ -2,7 +2,7 @@ import {DiscussionEmbed} from "disqus-react"
 
 const Comentarios = ({ postId, postTitle }) => {
   if(postId && postTitle){
-  const disqusShortname = "codigosfuente"
+  const disqusShortname = "codigofuente-1"
   const disqusConfig = {
     url: "https://codigofuente.vercel.app/post/"+postId,
     identifier: postId, // Single post id
@@ -17,7 +17,7 @@ const Comentarios = ({ postId, postTitle }) => {
       <DiscussionEmbed
         shortname={disqusShortname}
         config={disqusConfig}
-      />: <p>Hola</p>
+      />: null
 	  }
     </div>
   )
