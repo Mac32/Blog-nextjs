@@ -5,6 +5,7 @@ import dynamic from "next/dynamic"
 
 const SectionSkills = dynamic(import('../components/SectionSkills'))
 const SectionSobreMi = dynamic(import('../components/SectionSobreMi'))
+const SectionProject = dynamic(import('../components/SectionProject'))
 
 export default function About({sobreMi}) {
   return (
@@ -16,7 +17,8 @@ export default function About({sobreMi}) {
     <div>
 	<SectionSobreMi fuenteImagen={sobreMi.imagen} informacion={sobreMi.informacion} />
       
-	<SectionSkills />
+      <SectionSkills />
+      <SectionProject />
     </div>
     }
     </>

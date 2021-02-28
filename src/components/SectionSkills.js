@@ -36,9 +36,9 @@ export default function SectionSkills() {
       >
         <TecnologiaIcono fuente={tecnologiasLinks.html} titulo="HTML" />
         <TecnologiaIcono fuente={tecnologiasLinks.css} titulo="CSS" />
-        <TecnologiaIcono fuente={tecnologiasLinks.java} titulo="JAVA" />
         <TecnologiaIcono fuente={tecnologiasLinks.javascript} titulo="JAVASCRIPT" />
         <TecnologiaIcono fuente={tecnologiasLinks.react} titulo="REACT" />
+        <TecnologiaIcono fuente={tecnologiasLinks.java} titulo="JAVA" />
         <TecnologiaIcono fuente={tecnologiasLinks.mysql} titulo="MYSQL" />
         <TecnologiaIcono fuente={tecnologiasLinks.git} titulo="GIT" />
 

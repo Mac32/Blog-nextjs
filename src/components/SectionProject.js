@@ -1,36 +1,26 @@
 import React from "react";
 import dynamic from 'next/dynamic'
 
-const PostCard = dynamic(import( "./PostCard"))
+const CardProject = dynamic(import("./CardProject"))
+const H2 = dynamic(import("./elements/H2"))
 
-class SectionProject extends React.Component {
-  render() {
-    return (
-      <article className="sectionProject">
-        <div className="titulo">
-          <h2>Proyectos</h2>
-          <hr />
-        </div>
-        <div className="columns">
-          <div className="column" sm={4}>
-            <PostCard />
-          </div>
-          <div className="column" sm={4}>
-            <PostCard />
-          </div>
-          <div className="column" sm={4}>
-            <PostCard />
-          </div>
-          <div className="column" sm={4}>
-            <PostCard />
-          </div>
-          <div className="column" sm={4}>
-            <PostCard />
-          </div>
-        </div>
-      </article>
-    );
-  }
+export default function SectionProject() {
+
+  return (
+    <article>
+      {/* titulo de la seccion */}
+      <div className="titulo">
+        <H2 texto="Proyectos" />
+        <hr />
+      </div>
+      {/* Proyectos */}
+      <div className="grid m-5 grid-cols-2 gap-4">
+        <CardProject 
+        imagen="https://i.ibb.co/HLcMRNc/Blog-min.jpg" titulo="Blog personal" 
+        descripcion="Proyecto personal construido con nextjs y tailwindcss"
+        ruta="https://codigofuente.vercel.app" />
+      </div>
+    </article >
+  )
 }
 
-export default SectionProject;

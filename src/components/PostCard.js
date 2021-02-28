@@ -3,6 +3,8 @@ import Link from "next/link";
 import dynamic from 'next/dynamic'
 
 const ArticuloAutor = dynamic(import ('./elements/ArticuloAutor'))
+const H3 = dynamic (import ('./elements/H3'))
+const P = dynamic (import ('./elements/P'))
 
 function PostCard(props) {
   const fechaFormateada = new Date(props.fecha).toLocaleDateString()
@@ -18,13 +20,13 @@ function PostCard(props) {
       <div className="m-6">
         {/*Título*/}
         <Link href={`/post/${props.id}`}>
-          <h3 className="text-2xl text-gray-800 cursor-pointer">{props.titulo}</h3>
+          <H3>{props.titulo}</H3>
         </Link>
         <hr />
         {/* Resumen */}
-        <div className="my-3 text-gray-700">
+        <P>
           {props.resumen}
-        </div>
+        </P>
         {/* Autor */}
         <ArticuloAutor autor={props.autor} subtitulo={fechaFormateada} />
       </div>
