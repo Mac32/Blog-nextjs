@@ -8,7 +8,7 @@ export default function CardProject({ imagen, titulo, descripcion, ruta}) {
   return (
     <>
       <div className="grid grid-cols-2 rounded-md shadow-md">
-        <a href={ruta}>
+        <a href={ruta} target="_blank">
           <figure>
             <img className="h-40 rounded-l-md cursor-pointer" src={imagen} alt="Pagina de inicio de blog codigofuente.vercel.app" />
           </figure>
