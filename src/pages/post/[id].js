@@ -33,7 +33,7 @@ const Post = ({ res }) => {
         <div className="m-6 sm:m-9 text-gray-700" dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
       </div>
       <hr />
-      <PostFooter autor={post.autor} /> 
+      <PostFooter autor={post.autor} tags={post.tags} /> 
       </>
       : null
 }
@@ -83,6 +83,7 @@ export async function getStaticProps({ params }) {
       titulo: datos.titulo,
       contenido: datos.contenido,
       autor: datos.autor,
+      tags: datos.tags,
     })
   });
 

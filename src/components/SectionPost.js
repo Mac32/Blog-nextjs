@@ -1,6 +1,5 @@
 import React from "react";
 import dynamic from 'next/dynamic'
-import db from "../firestoreConfig/FirestoreConfig"
 
 const PostCard = dynamic (import('./PostCard'))
 const H2 = dynamic (import('./elements/H2'))

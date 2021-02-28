@@ -32,7 +32,7 @@ export async function getStaticProps(){
       .then(
         (publicaciones) => {
             publicaciones.docs.map((doc) => {
-	      if(doc.data()._fl_meta_.schema === "publicacion"){
+	      if(doc.data()._fl_meta_.schema === "publicacion" && doc.data()._fl_meta_.status === "publish"){
 		datosPublicaciones.push({
 		  id: doc.id,
 		  titulo: doc.data().titulo,
