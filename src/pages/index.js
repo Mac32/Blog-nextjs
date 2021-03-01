@@ -40,6 +40,7 @@ export async function getStaticProps(){
 		  imagen: doc.data().urlImage,
 		  autor: doc.data().autor,
 		  fecha: doc.data().fecha,
+      tags: doc.data().tags,
 		})
 	      }
 	      
