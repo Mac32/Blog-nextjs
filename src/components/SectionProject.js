@@ -14,7 +14,7 @@ export default function SectionProject() {
         <hr />
       </div>
       {/* Proyectos */}
-      <div className="grid m-5 grid-cols-2 gap-4">
+      <div className="flex flex-col md:flex-row">
         <CardProject 
         imagen="https://i.ibb.co/HLcMRNc/Blog-min.jpg" titulo="Blog personal" 
         descripcion="Proyecto personal construido con nextjs y tailwindcss"
