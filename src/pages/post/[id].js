@@ -35,7 +35,8 @@ const Post = ({ res }) => {
               "coverageStartTime": "2015-03-09T11:30:00-07:00",
               "coverageEndTime": "2015-03-09T16:00:00-07:00",
               "headline": "Apple Spring Forward Event Live Blog",
-              "description": "Welcome to live coverage of the Apple Spring Forward …"
+              "description": "Welcome to live coverage of the Apple Spring Forward …",
+              "location": "Perú"
             }
           )
         }}/>
