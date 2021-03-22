@@ -26,12 +26,12 @@ const Post = ({ res }) => {
 
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "@id": "http://techcrunch.com/2015/03/08/apple-watch-event-live-blog",
-              "coverageStartTime": "2015-03-09T11:30:00-07:00",
-              "coverageEndTime": "2015-03-09T16:00:00-07:00",
-              "headline": "Apple Spring Forward Event Live Blog",
-              "description": "Welcome to live coverage of the Apple Spring Forward …",
-              "location": "Perú"
+              "@id": `https://codigofuente.vercel.app/post/${post.identificador}`,
+              "headline": `${post.titulo}`,
+              "description": `${post.resumen}`,
+              "image": [
+                `${post.urlImage}`
+              ]
             }
           )
         }}/>
