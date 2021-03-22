@@ -25,13 +25,8 @@ const Post = ({ res }) => {
             {
 
               "@context": "https://schema.org",
-              "@type": "LiveBlogPosting",
+              "@type": "BlogPosting",
               "@id": "http://techcrunch.com/2015/03/08/apple-watch-event-live-blog",
-              "about": {
-                "@type": "Event",
-                "startDate": "2015-03-09T13:00:00-07:00",
-                "name": "Apple Spring Forward Event"
-              },
               "coverageStartTime": "2015-03-09T11:30:00-07:00",
               "coverageEndTime": "2015-03-09T16:00:00-07:00",
               "headline": "Apple Spring Forward Event Live Blog",
