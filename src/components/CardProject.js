@@ -18,7 +18,7 @@ export default function CardProject({ imagen, titulo, descripcion, ruta}) {
       shadow-md">
         <a href={ruta} target="_blank">
           <figure>
-            <img className="md:h-40 md:rounded-l-md cursor-pointer" src={imagen} alt="Pagina de inicio de blog codigofuente.vercel.app" />
+            <img className="md:h-40 rounded-t-md md:rounded-l-md cursor-pointer" src={imagen} alt="Pagina de inicio de blog codigofuente.vercel.app" />
           </figure>
         </a>
         {/* Contenido */}

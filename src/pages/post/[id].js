@@ -18,8 +18,22 @@ const Post = ({ res }) => {
     <>
     <Head>
 
-    <meta name="description" content={post.resumen}/>
-    <title>{post.titulo}</title>
+      <meta name="description" content={post.resumen}/>
+      <title>{post.titulo}</title>
+	<script type="application/ld+json">
+	 {
+      "@context": "https://schema.org",
+	     "@type": "LiveBlogPosting",
+	     "@id": `https://codigofuente.vercel.app/post/${post.identificador}`,
+"description": `${post.resumen}`
+      "headline": `${post.titulo}`,
+      "image": [
+        `${post.urlImage}`
+       ],
+      "datePublished": "2015-02-05T08:00:00+08:00",
+      "dateModified": "2015-02-05T09:20:00+08:00"
+    }
+	  </script>
     </Head>
     <div className="container mx-auto md:w-4/5 shadow-md m-6">
 {
