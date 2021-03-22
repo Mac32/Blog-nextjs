@@ -16,44 +16,47 @@ const Post = ({ res }) => {
 
   return (
     <>
-    <Head>
+      <Head>
 
-      <meta name="description" content={post.resumen}/>
-      <title>{post.titulo}</title>
-	<script type="application/ld+json">
-	 {
-      "@context": "https://schema.org",
-	     "@type": "LiveBlogPosting",
-	     "@id": `https://codigofuente.vercel.app/post/${post.identificador}`,
-"description": `${post.resumen}`
-      "headline": `${post.titulo}`,
-      "image": [
-        `${post.urlImage}`
-       ],
-      "datePublished": "2015-02-05T08:00:00+08:00",
-      "dateModified": "2015-02-05T09:20:00+08:00"
-    }
-	  </script>
-    </Head>
-    <div className="container mx-auto md:w-4/5 shadow-md m-6">
-{
-    post && post !== undefined ?
-      <>
-      <div>
-        <div className="h-48 bg-center bg-cover rounded-t-md" style={{ backgroundImage: 'url(' + post.urlImage + ')', }}>
-          <img className="hidden" src={post.urlImage} alt={post.descriptionImage} />
-        </div>
-        <H2 texto={post.titulo} />
-        <div className="m-6 sm:m-9 text-gray-700" dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
+        <meta name="description" content={post.resumen} />
+        <title>{post.titulo}</title>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "LiveBlogPosting",
+              "@id": `https://codigofuente.vercel.app/post/${post.identificador}`,
+              "description": `${post.resumen}`,
+              "headline": `${post.titulo}`,
+              "image": [
+                `${post.urlImage}`
+              ]
+
+            }
+          )
+        }}/>
+
+
+      </Head>
+      <div className="container mx-auto md:w-4/5 shadow-md m-6">
+        {
+          post && post !== undefined ?
+            <>
+              <div>
+                <div className="h-48 bg-center bg-cover rounded-t-md" style={{ backgroundImage: 'url(' + post.urlImage + ')', }}>
+                  <img className="hidden" src={post.urlImage} alt={post.descriptionImage} />
+                </div>
+                <H2 texto={post.titulo} />
+                <div className="m-6 sm:m-9 text-gray-700" dangerouslySetInnerHTML={{ __html: post.contenido }}></div>
+              </div>
+              <hr />
+              <PostFooter autor={post.autor} tags={post.tags} />
+            </>
+            : null
+        }
       </div>
-      <hr />
-      <PostFooter autor={post.autor} tags={post.tags} /> 
-      </>
-      : null
-}
-</div>
-  <Comentarios postId={post.identificador} postTitle={post.titulo} />
-  </>
+      <Comentarios postId={post.identificador} postTitle={post.titulo} />
+    </>
   );
 };
 
@@ -61,20 +64,20 @@ export async function getStaticPaths() {
 
   let paths = []
 
-    await db.collection("fl_content")
-      .get()
-      .then(
-        (publicaciones) => {
-            publicaciones.docs.map((doc) => {
-	      if(doc.data()._fl_meta_.schema === "publicacion"){
-		paths.push({
-		  params: {
-		    id: doc.id,
-		  }
-		})
-	      }
+  await db.collection("fl_content")
+    .get()
+    .then(
+      (publicaciones) => {
+        publicaciones.docs.map((doc) => {
+          if (doc.data()._fl_meta_.schema === "publicacion") {
+            paths.push({
+              params: {
+                id: doc.id,
+              }
             })
+          }
         })
+      })
   return {
     // Only `/posts/1` and `/posts/2` are generated at build time
     paths,
