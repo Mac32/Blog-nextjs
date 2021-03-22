@@ -13,6 +13,21 @@ export default function App({datosPublicaciones}) {
 	<meta name="description" content="Blog de desarrollo web con informacion precisa y detallada por programador web en los diferentes lenguajes y tecnologias disponibles (Javascript, Java, HTML CSS, ReacJS, Next)"/>
         <title>Blog - Código Fuente</title>
         <link rel="icon" href="/logo.ico" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": "https://codigofuente.vercel.app/About",
+              "headline": "Blog de desarrollo y Pramacion",
+              "description": "Blog sobre desarrollo tanto de web como nativo, con explicaciones simples y faciles de entender",
+              "image": [
+                "https://i.ibb.co/FJh5fnW/Logo-completo-min.png"
+              ]
+            }
+          )
+        }}/>
       </Head>
 
     <Hero />

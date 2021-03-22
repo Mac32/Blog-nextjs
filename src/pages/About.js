@@ -12,6 +12,21 @@ export default function About({sobreMi}) {
     <>
     <Head>
     	<meta name="description" content="Alberth Bompart desarrollador web front end y programador. Aqui esta un poco de informacion sobre el y las tecnologias que domina" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": "https://codigofuente.vercel.app/About",
+              "headline": "Alberth Bompart - Desarrollador Web Front-end",
+              "description": `${sobreMi.informacion}`,
+              "image": [
+                `${sobreMi.imagen}`
+              ]
+            }
+          )
+        }}/>
     </Head>
     {
     <div>
