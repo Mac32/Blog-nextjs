@@ -19,8 +19,8 @@ export default function App({datosPublicaciones}) {
 
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "@id": "https://codigofuente.vercel.app/About",
-              "headline": "Blog de desarrollo y Pramacion",
+              "@id": "https://codigofuente.vercel.app",
+              "headline": "CodigoFuente - Blog de desarrollo y Programacion",
               "description": "Blog sobre desarrollo tanto de web como nativo, con explicaciones simples y faciles de entender",
               "image": [
                 "https://i.ibb.co/FJh5fnW/Logo-completo-min.png"
