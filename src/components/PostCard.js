@@ -26,9 +26,11 @@ function PostCard(props) {
       {/* Contenido */}
       <div className="m-6">
         {/*Título*/}
-        <Link href={`/post/${props.id}`}>
-          <H3>{props.titulo}</H3>
-        </Link>
+          <H3>
+	    <Link href={`/post/${props.id}`}>
+	       {props.titulo}
+	     </Link>
+         </H3>
         <hr />
         {/* Resumen */}
         <P>
