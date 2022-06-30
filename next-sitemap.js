@@ -1,5 +1,8 @@
-module.exports = {
-  siteUrl: 'https://codigofuente.vercel.app',
+/** @type {import('next-sitemap').IConfig} */
+const config = {
+  siteUrl: process.env.SITE_URL,
   generateRobotsTxt: true // (optional)
   // ...other options
 }
+
+export default config
