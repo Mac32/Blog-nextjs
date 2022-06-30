@@ -1,5 +1,6 @@
 import React from 'react'
 import db from '../../firestoreConfig/FirestoreConfig'
+import { collection, getDocs, getDoc, doc } from 'firebase/firestore/lite'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
@@ -64,8 +65,7 @@ const Post = ({ res }) => {
 export async function getStaticPaths () {
   const paths = []
 
-  await db.collection('fl_content')
-    .get()
+  await getDocs(collection(db, 'fl_content'))
     .then(
       (publicaciones) => {
         publicaciones.docs.map((doc) => {
@@ -90,7 +90,8 @@ export async function getStaticPaths () {
 export async function getStaticProps ({ params }) {
   const { id } = params
   // Se obtiene el documento
-  const res = await db.collection('fl_content').doc(id).get().then(doc => {
+  //
+  const res = await getDoc(doc(db, 'fl_content', id)).then(doc => {
     const datos = doc.data()
     return ({
       identificador: id,

@@ -6,24 +6,25 @@ const Comentarios = ({ postId, postTitle }) => {
     const disqusConfig = {
       url: 'https://codigofuente.vercel.app/post/' + postId,
       identifier: postId, // Single post id
-      title: postTitle // Single post title
+      title: postTitle, // Single post title
+      languaje: 'es_ES'
     }
 
-    console.log(disqusConfig.url)
     return (
       <div>
         {
-	(postId && postTitle)
-	  ? <DiscussionEmbed
-    shortname={disqusShortname}
-    config={disqusConfig}
-	    />
-	  : null
-	  }
+          (postId && postTitle)
+            ? <DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+              />
+            : null
+        }
       </div>
     )
   } else {
-  	return ('Cargando...')
+    return ('Cargando...')
   }
 }
+
 export default Comentarios

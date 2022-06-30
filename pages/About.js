@@ -1,4 +1,5 @@
 import db from '../firestoreConfig/FirestoreConfig.js'
+import { doc, getDoc } from 'firebase/firestore/lite'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 
@@ -40,13 +41,11 @@ export default function About ({ sobreMi }) {
 }
 
 export async function getStaticProps () {
-  const sobreMi = await db.collection('fl_content')
-    .doc('p04tDANF8rsUm2xFSaLn')
-    .get().then(
-      (doc) => {
-        return { imagen: doc.data().imagen, informacion: doc.data().informacion }
-      }
-    )
+  const sobreMi = await getDoc(doc(db, 'fl_content', 'p04tDANF8rsUm2xFSaLn')).then(
+    (doc) => {
+      return { imagen: doc.data().imagen, informacion: doc.data().informacion }
+    }
+  )
 
   return {
     props: {
