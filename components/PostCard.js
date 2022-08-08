@@ -31,10 +31,14 @@ function PostCard (props) {
         <hr />
         {/* Resumen */}
         <P>
-          {props.resumen}
+          <Link href={`/post/${props.id}`}>
+            {props.resumen}
+          </Link>
         </P>
         {/* Autor */}
-        <ArticuloAutor autor={props.autor} subtitulo={fechaFormateada} />
+        <Link href='/About'>
+          <ArticuloAutor autor={props.autor} subtitulo={fechaFormateada} />
+        </Link>
       </div>
     </div>
   )

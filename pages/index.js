@@ -10,8 +10,8 @@ export default function App ({ datosPublicaciones }) {
   return (
     <>
       <Head>
-        <meta name='google-site-verification' content='faPHg-GaQx67jTHLz60EFWUQoeoHdXJOaeGYR6q2Dm8' />
-        <meta name='description' content='Blog de desarrollo web con informacion precisa y detallada por programador web en los diferentes lenguajes y tecnologias disponibles (Javascript, Java, HTML CSS, ReacJS, Next)' />
+        <meta name='google-site-verification' content={process.env.GOOGLE_SITE_VERIFICATION} />
+        <meta name='description' content='Blog de desarrollo web donde encontraras articulos sobre tecnologias como HTML, CSS, JavaScript, frameworks y mas sobre el mundo de la tecnoligia' />
         <title>Blog - Código Fuente</title>
         <link rel='icon' href='/logo.ico' />
         <script
