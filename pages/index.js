@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import db from '../firestoreConfig/FirestoreConfig'
-import { collection, getDocs } from 'firebase/firestore/lite'
+// import db from '../firestoreConfig/FirestoreConfig'
+// import { collection, getDocs } from 'firebase/firestore/lite'
 import dynamic from 'next/dynamic'
+import dbConnect from '../lib/mongoConect'
+import Post from '../models/Post'
 
 const Section = dynamic(import('../components/Section'))
 const Hero = dynamic(import('../components/Hero'))
@@ -41,6 +43,25 @@ export default function App ({ datosPublicaciones }) {
 }
 
 export async function getStaticProps () {
+  await dbConnect()
+  const result = await Post.find({})
+
+  const datosPublicaciones = result.map((doc) => {
+    const post = doc.toObject()
+    post._id = post._id.toString()
+    post.date = JSON.stringify(post.date)
+    return post
+  })
+
+  return {
+    props: {
+      datosPublicaciones
+    },
+    revalidate: 10
+  }
+}
+
+/* export async function getStaticProps () {
   const datosPublicaciones = []
 
   await getDocs(collection(db, 'fl_content')).then(
@@ -66,4 +87,4 @@ export async function getStaticProps () {
     },
     revalidate: 1
   }
-}
+} */

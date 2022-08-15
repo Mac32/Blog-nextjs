@@ -1,17 +1,19 @@
-import React from 'react'
-import db from '../../firestoreConfig/FirestoreConfig'
-import { collection, getDocs, getDoc, doc } from 'firebase/firestore/lite'
+import { useState, useEffect } from 'react'
+// import db from '../../firestoreConfig/FirestoreConfig'
+// import { collection, getDocs, getDoc, doc } from 'firebase/firestore/lite'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import Post from '../../models/Post'
+import dbConnect from '../../lib/mongoConect'
 
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
 
-const Post = ({ res }) => {
-  const [post, setPost] = React.useState([])
+const Publication = ({ res }) => {
+  const [post, setPost] = useState([])
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPost(res)
   }, [res])
 
@@ -19,8 +21,8 @@ const Post = ({ res }) => {
     <>
       <Head>
 
-        <meta name='description' content={post.resumen} />
-        <title>{post.titulo}</title>
+        <meta name='description' content={post.title} />
+        <title>{post.title}</title>
         <script
           type='application/ld+json' dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -28,9 +30,9 @@ const Post = ({ res }) => {
 
                 '@context': 'https://schema.org',
                 '@type': 'BlogPosting',
-                '@id': `https://codigofuente.vercel.app/post/${post.identificador}`,
-                headline: `${post.titulo}`,
-                description: `${post.resumen}`,
+                '@id': `https://codigofuente.vercel.app/post/${post.id}`,
+                headline: `${post.title}`,
+                description: `${post.title}`,
                 image: [
                 `${post.urlImage}`
                 ]
@@ -48,36 +50,36 @@ const Post = ({ res }) => {
                 <div className='h-48 bg-center bg-cover rounded-t-md' style={{ backgroundImage: 'url(' + post.urlImage + ')' }}>
                   <img className='hidden' src={post.urlImage} alt={post.descriptionImage} />
                 </div>
-                <H2 texto={post.titulo} />
-                <div className='m-6 sm:m-9 text-gray-700' dangerouslySetInnerHTML={{ __html: post.contenido }} />
+                <H2 texto={post.title} />
+                <div className='m-6 sm:m-9 text-gray-700' dangerouslySetInnerHTML={{ __html: post.content }} />
               </div>
               <hr />
-              <PostFooter autor={post.autor} tags={post.tags} />
+              <PostFooter autor={post.author} tags={post.tags} />
               </>
             : null
         }
       </div>
-      <Comentarios postId={post.identificador} postTitle={post.titulo} />
+      <Comentarios postId={post._id} postTitle={post.title} />
     </>
   )
 }
 
 export async function getStaticPaths () {
-  const paths = []
+  try {
+    await dbConnect()
+  } catch (error) {
+    console.log(error)
+  }
 
-  await getDocs(collection(db, 'fl_content'))
-    .then(
-      (publicaciones) => {
-        publicaciones.docs.map((doc) => {
-          if (doc.data()._fl_meta_.schema === 'publicacion') {
-            paths.push({
-              params: {
-                id: doc.id
-              }
-            })
-          }
-        })
-      })
+  const resp = await Post.find({})
+  const paths = resp.map(post => (
+    {
+      params: {
+        id: post._id.toString()
+      }
+    }
+  ))
+
   return {
     // Only `/posts/1` and `/posts/2` are generated at build time
     paths,
@@ -89,28 +91,25 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }) {
   const { id } = params
-  // Se obtiene el documento
-  //
-  const res = await getDoc(doc(db, 'fl_content', id)).then(doc => {
-    const datos = doc.data()
-    return ({
-      identificador: id,
-      urlImage: datos.urlImage,
-      descriptionImage: datos.descriptionImage,
-      resumen: datos.resumen,
-      titulo: datos.titulo,
-      contenido: datos.contenido,
-      autor: datos.autor,
-      tags: datos.tags
-    })
-  })
 
+  console.log('Identificador; ' + id)
+
+  try {
+    await dbConnect()
+  } catch (error) {
+    console.log(error)
+  }
+
+  const respuesta = await Post.findById(id)
+  const res = await respuesta.toObject()
+  res._id = res._id.toString()
+  res.date = JSON.stringify(res.date)
   return {
     props: {
       res
     },
-    revalidate: 1
+    revalidate: 10
   }
 }
 
-export default Post
+export default Publication

@@ -22,12 +22,12 @@ const SectionPost = ({ datos }) => {
             ? datos.map((publicacion, key) => (
               <div className='mt-6 ' key={key}>
                 <PostCard
-                  id={publicacion.id}
-                  titulo={publicacion.titulo}
-                  resumen={publicacion.resumen}
-                  imagen={publicacion.imagen}
-                  autor={publicacion.autor}
-                  fecha={publicacion.fecha}
+                  id={publicacion._id}
+                  titulo={publicacion.title}
+                  resumen={publicacion.title}
+                  imagen={publicacion.urlImage}
+                  autor={publicacion.author}
+                  fecha={publicacion.date}
                   tags={publicacion.tags}
                 />
               </div>
