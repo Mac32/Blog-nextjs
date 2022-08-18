@@ -11,33 +11,27 @@ function PostCard (props) {
 
   }, [props])
 
-  const fechaFormateada = new Date(props.fecha).toLocaleDateString()
   return (
     <div className='rounded-md shadow-md max-w-sm m-auto  md:m-3 '>
-      {/* Imagen */}
       <Link href={`/post/${props.id}`}>
         <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + props.imagen + ')' }}>
           <img className='hidden' src={props.imagen} alt='Placeholder image' />
         </figure>
       </Link>
-      {/* Contenido */}
       <div className='m-6'>
-        {/* Título */}
         <H3>
           <Link href={`/post/${props.id}`}>
             {props.titulo}
           </Link>
         </H3>
         <hr />
-        {/* Resumen */}
         <P>
           <Link href={`/post/${props.id}`}>
             {props.resumen}
           </Link>
         </P>
-        {/* Autor */}
         <Link href='/About'>
-          <ArticuloAutor autor={props.autor} subtitulo={fechaFormateada} />
+          <ArticuloAutor autor={props.autor} subtitulo={props.fecha} />
         </Link>
       </div>
     </div>

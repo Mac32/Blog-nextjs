@@ -24,7 +24,7 @@ const SectionPost = ({ datos }) => {
                 <PostCard
                   id={publicacion._id}
                   titulo={publicacion.title}
-                  resumen={publicacion.title}
+                  resumen={publicacion.summary}
                   imagen={publicacion.urlImage}
                   autor={publicacion.author}
                   fecha={publicacion.date}
