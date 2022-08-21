@@ -29,6 +29,7 @@ const SectionPost = ({ datos }) => {
                   autor={publicacion.author}
                   fecha={publicacion.date}
                   tags={publicacion.tags}
+                  postPath={publicacion.postPath}
                 />
               </div>
             ))

@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import Logo from 'components/elements/Logo'
 
 const ButtonMenu = dynamic(import('./elements/ButtonMenu'))
 const Avatar = dynamic(import('./elements/Avatar'))
@@ -36,7 +37,13 @@ export default function AppBar () {
               <a>
 
                 <div className='flex-shrink-0 flex items-center'>
-                  <img className='block h-8 w-auto' src='https://i.ibb.co/FJh5fnW/Logo-completo-min.png' alt='Workflow' />
+                  <Logo
+                    className='rounded-full'
+                    src='https://i.ibb.co/FJh5fnW/Logo-completo-min.png'
+                    alt='Logo de la pagina'
+                    width={35}
+                    height={35}
+                  />
                 </div>
               </a>
             </Link>
@@ -61,7 +68,11 @@ export default function AppBar () {
 
             <div className='ml-3 relative'>
               <div>
-                <Avatar />
+                <Avatar
+                  width={40}
+                  height={40}
+                  alt='Foto de perfil'
+                />
               </div>
 
             </div>

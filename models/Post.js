@@ -11,6 +11,10 @@ const postSchema = new Schema({
     type: String,
     required: [true, 'Please provide a title']
   },
+  postPath: {
+    type: String,
+    required: [true, 'Please provide the post path']
+  },
   author: {
     type: String,
     required: [true, 'Please provide the author']

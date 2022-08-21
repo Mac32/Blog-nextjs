@@ -23,10 +23,10 @@ export default function Hero () {
               <h1 className='text-4xl tracking-tight font-extrabold text-gray-400 sm:text-5xl md:text-6xl'>
                 <span className=' block xl:inline'>Alberth Bompart</span>
                 <hr className='my-4 border border-gray-900' />
-                <span className='block text-indigo-600 xl:inline'>Codigo Fuente</span>
+                <span className='block text-indigo-600 xl:inline'>El Blog De Malbo</span>
               </h1>
               <p className='mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'>
-                Blog personal donde conseguiras informacion sobre desarrollo de software y tecnologias informáticas.
+                Desarrollo web, programacion y mucho mas sobre el mundo tech.
               </p>
               <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
                 <div className='rounded-md shadow'>

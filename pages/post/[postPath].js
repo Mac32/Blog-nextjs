@@ -12,7 +12,6 @@ const Comentarios = dynamic(import('../../components/Comentarios'))
 
 const Publication = ({ res }) => {
   const [post, setPost] = useState([])
-
   useEffect(() => {
     setPost(res)
   }, [res])
@@ -59,7 +58,7 @@ const Publication = ({ res }) => {
             : null
         }
       </div>
-      <Comentarios postId={post._id} postTitle={post.title} />
+      <Comentarios postId={post.postPath} postTitle={post.title} />
     </>
   )
 }
@@ -75,7 +74,7 @@ export async function getStaticPaths () {
   const paths = resp.map(post => (
     {
       params: {
-        id: post._id.toString()
+        postPath: post.toObject().postPath
       }
     }
   ))
@@ -90,17 +89,14 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const { id } = params
-
-  console.log('Identificador; ' + id)
-
+  const { postPath } = params
   try {
     await dbConnect()
   } catch (error) {
     console.log(error)
   }
 
-  const respuesta = await Post.findById(id)
+  const respuesta = await Post.findOne({ postPath })
   const res = await respuesta.toObject()
   res._id = res._id.toString()
   res.date = JSON.stringify(res.date)

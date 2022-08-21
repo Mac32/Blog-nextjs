@@ -60,31 +60,3 @@ export async function getStaticProps () {
     revalidate: 10
   }
 }
-
-/* export async function getStaticProps () {
-  const datosPublicaciones = []
-
-  await getDocs(collection(db, 'fl_content')).then(
-    (publicaciones) => {
-      publicaciones.docs.map((doc) => {
-        if (doc.data()._fl_meta_.schema === 'publicacion' && doc.data()._fl_meta_.status === 'publish') {
-          datosPublicaciones.push({
-            id: doc.id,
-            titulo: doc.data().titulo,
-            resumen: doc.data().resumen,
-            imagen: doc.data().urlImage,
-            autor: doc.data().autor,
-            fecha: doc.data().fecha,
-            tags: doc.data().tags
-          })
-        }
-      })
-    })
-
-  return {
-    props: {
-      datosPublicaciones
-    },
-    revalidate: 1
-  }
-} */
