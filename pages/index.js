@@ -1,9 +1,7 @@
 import Head from 'next/head'
-// import db from '../firestoreConfig/FirestoreConfig'
-// import { collection, getDocs } from 'firebase/firestore/lite'
 import dynamic from 'next/dynamic'
-import dbConnect from '../lib/mongoConect'
-import Post from '../models/Post'
+import dbConnect from 'lib/mongoConect'
+import Post from 'models/Post'
 
 const Section = dynamic(import('../components/Section'))
 const Hero = dynamic(import('../components/Hero'))

@@ -8,7 +8,7 @@ export default function Avatar ({ className = '', alt = 'Imagen', width = 50, he
       <a className='flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ' aria-haspopup='true'>
         <Image
           className={'h-12 w-12 rounded-full ' + className}
-          src={imgAvatar}
+          src='https://unavatar.io/twitter/AlberthBompart'
           alt={alt}
           width={width}
           height={height}

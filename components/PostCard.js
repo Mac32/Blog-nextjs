@@ -37,7 +37,9 @@ function PostCard (props) {
           </Link>
         </P>
         <Link href='/About'>
-          <ArticuloAutor autor={props.autor} subtitulo={props.fecha} />
+          <a>
+            <ArticuloAutor autor={props.autor} subtitulo={props.fecha} />
+          </a>
         </Link>
       </div>
     </div>

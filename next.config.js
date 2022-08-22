@@ -4,6 +4,8 @@ module.exports = {
     defaultLocale: 'es'
   },
   images: {
-    domains: ['i.ibb.co']
+    domains: [
+      'i.ibb.co',
+      'unavatar.io']
   }
 }
