@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-// import db from '../../firestoreConfig/FirestoreConfig'
-// import { collection, getDocs, getDoc, doc } from 'firebase/firestore/lite'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Post from '../../models/Post'
@@ -11,10 +9,15 @@ const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
 
 const Publication = ({ res }) => {
-  const [post, setPost] = useState([])
+  const [post, setPost] = useState({})
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     setPost(res)
+    setLoading(false)
   }, [res])
+
+  if (loading) return <p>Cargarndo...</p>
 
   return (
     <>
@@ -54,7 +57,8 @@ const Publication = ({ res }) => {
               </div>
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
-              </>
+
+            </>
             : null
         }
       </div>
@@ -80,10 +84,7 @@ export async function getStaticPaths () {
   ))
 
   return {
-    // Only `/posts/1` and `/posts/2` are generated at build time
     paths,
-    // Enable statically generating additional pages
-    // For example: `/posts/3`
     fallback: true
   }
 }
@@ -96,9 +97,10 @@ export async function getStaticProps ({ params }) {
     console.log(error)
   }
 
-  const respuesta = await Post.findOne({ postPath })
+  const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()
   const res = await respuesta.toObject()
   res._id = res._id.toString()
+  res.author._id = res.author._id.toString()
   res.date = JSON.stringify(res.date)
   return {
     props: {

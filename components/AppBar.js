@@ -54,29 +54,10 @@ export default function AppBar () {
                   <a className='hover:bg-gray-700 text-gray-300 px-3 py-2 rounded-md text-sm font-medium'>Inicio</a>
                 </Link>
 
-                <Link href='/About'>
-
-                  <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Sobre Mi</a>
-                </Link>
-
               </div>
             </div>
           </div>
 
-          {/* Boton de autor */}
-          <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-
-            <div className='ml-3 relative'>
-              <div>
-                <Avatar
-                  width={40}
-                  height={40}
-                  alt='Foto de perfil'
-                />
-              </div>
-
-            </div>
-          </div>
         </div>
       </div>
 
@@ -86,7 +67,6 @@ export default function AppBar () {
 
           <ButtonMenu texto='Inicio' ruta='/' />
 
-          <ButtonMenu texto='Sobre Mi' ruta='/About' />
         </div>
       </div>
     </nav>

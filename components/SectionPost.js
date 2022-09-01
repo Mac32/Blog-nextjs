@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 const PostCard = dynamic(import('./PostCard'))
 const H2 = dynamic(import('./elements/H2'))
 
-const SectionPost = ({ datos }) => {
+const SectionPost = ({ publicaciones }) => {
   return (
     <article className='
      container
@@ -18,19 +18,10 @@ const SectionPost = ({ datos }) => {
        flex flex-col md:flex-row '
       >
         {
-          datos && datos !== undefined
-            ? datos.map((publicacion, key) => (
+          publicaciones && publicaciones !== undefined
+            ? publicaciones.map((publicacion, key) => (
               <div className='mt-6 ' key={key}>
-                <PostCard
-                  id={publicacion._id}
-                  titulo={publicacion.title}
-                  resumen={publicacion.summary}
-                  imagen={publicacion.urlImage}
-                  autor={publicacion.author}
-                  fecha={publicacion.date}
-                  tags={publicacion.tags}
-                  postPath={publicacion.postPath}
-                />
+                <PostCard publicacion={publicacion} />
               </div>
             ))
             : null

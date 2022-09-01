@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 
 const Avatar = dynamic(import('components/elements/Avatar'))
 const H2 = dynamic(import('components/elements/H2'))
 
-export default function SectionSobreMi ({ informacion, fuenteImagen }) {
+export default function SectionSobreMi ({ userTwitter, informacion }) {
   return (
     <div className='
     m-4
@@ -14,7 +13,7 @@ export default function SectionSobreMi ({ informacion, fuenteImagen }) {
     lg:grid-cols-4'
     >
       <figure className='rounded-md p-3'>
-        <Avatar width={500} height={500} alt='Imagen de perfil' className='w-3/4 m-auto' />
+        <Avatar userTwitter={userTwitter} width={500} height={500} alt='Imagen de perfil' className='w-3/4 m-auto' />
       </figure>
       <div className='mx-7 lg:col-span-3'>
         <H2 texto='Sobre Mi' />

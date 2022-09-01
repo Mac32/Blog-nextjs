@@ -1,4 +1,7 @@
 import mongoose, { Schema, model } from 'mongoose'
+import Usuario from 'models/Usuario'
+
+Usuario
 
 const postSchema = new Schema({
   visibility: {
@@ -9,14 +12,17 @@ const postSchema = new Schema({
   },
   title: {
     type: String,
-    required: [true, 'Please provide a title']
+    required: [true, 'Please provide a title'],
+    unique: true
   },
   postPath: {
     type: String,
-    required: [true, 'Please provide the post path']
+    required: [true, 'Please provide the post path of publication'],
+    unique: true
   },
   author: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'Usuario',
     required: [true, 'Please provide the author']
   },
   date: {
@@ -26,6 +32,10 @@ const postSchema = new Schema({
   content: {
     type: String,
     required: [true, 'Please provide the content']
+  },
+  summary: {
+    type: String,
+    required: [true, 'Please provide the summary']
   },
   tags: {
     type: Array

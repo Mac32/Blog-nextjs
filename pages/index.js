@@ -6,7 +6,7 @@ import Post from 'models/Post'
 const Section = dynamic(import('../components/Section'))
 const Hero = dynamic(import('../components/Hero'))
 
-export default function App ({ datosPublicaciones }) {
+export default function App ({ publicaciones }) {
   return (
     <>
       <Head>
@@ -34,7 +34,7 @@ export default function App ({ datosPublicaciones }) {
       </Head>
 
       <Hero />
-      <Section datosPublicaciones={datosPublicaciones} />
+      <Section publicaciones={publicaciones} />
 
     </>
   )
@@ -42,18 +42,28 @@ export default function App ({ datosPublicaciones }) {
 
 export async function getStaticProps () {
   await dbConnect()
-  const result = await Post.find({})
+  const result = await Post.find({}).select({
+    visibility: 1,
+    title: 1,
+    postPath: 1,
+    author: 1,
+    date: 1,
+    summary: 1,
+    urlImage: 1,
+    imageDescription: 1
+  }).populate('author', 'userName firstName lastName userTwitter').exec()
 
-  const datosPublicaciones = result.map((doc) => {
+  const publicaciones = result.map((doc) => {
     const post = doc.toObject()
     post._id = post._id.toString()
+    post.author._id = post.author._id.toString()
     post.date = JSON.stringify(post.date)
     return post
   })
 
   return {
     props: {
-      datosPublicaciones
+      publicaciones
     },
     revalidate: 10
   }

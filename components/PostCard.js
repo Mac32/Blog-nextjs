@@ -6,39 +6,39 @@ const ArticuloAutor = dynamic(import('./ArticuloAutor'))
 const H3 = dynamic(import('./elements/H3'))
 const P = dynamic(import('./elements/P'))
 
-function PostCard (props) {
+function PostCard ({ publicacion }) {
   useEffect(() => {
 
-  }, [props])
+  }, [publicacion])
 
   return (
     <div className='rounded-md shadow-md max-w-sm m-auto  md:m-3 '>
-      <Link href={`/post/${props.postPath}`}>
+      <Link href={`/post/${publicacion.postPath}`}>
         <a>
-          <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + props.imagen + ')' }}>
-            <img className='hidden' src={props.imagen} alt='Placeholder image' />
+          <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.imagen + ')' }}>
+            <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
           </figure>
         </a>
       </Link>
       <div className='m-6'>
         <H3>
-          <Link href={`/post/${props.postPath}`}>
+          <Link href={`/post/${publicacion.postPath}`}>
             <a>
-              {props.titulo}
+              {publicacion.title}
             </a>
           </Link>
         </H3>
         <hr />
         <P>
-          <Link href={`/post/${props.postPath}`}>
+          <Link href={`/post/${publicacion.postPath}`}>
             <a>
-              {props.resumen}
+              {publicacion.summary}
             </a>
           </Link>
         </P>
-        <Link href='/About'>
+        <Link href={`/about/${publicacion.author.userName}`}>
           <a>
-            <ArticuloAutor autor={props.autor} subtitulo={props.fecha} />
+            <ArticuloAutor userName={publicacion.author.userName} autor={publicacion.author} fecha={publicacion.date} />
           </a>
         </Link>
       </div>
