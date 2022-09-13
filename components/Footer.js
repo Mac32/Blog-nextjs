@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Logo from 'components/elements/Logo'
+import ImagenLogo from 'public/image/LogoComprimido.png'
 
 export default function Footer () {
   const year = new Date().getFullYear()
@@ -11,7 +12,7 @@ export default function Footer () {
           <Logo
             className='rounded-full'
             alt='Imagen de el autor del blog'
-            src='https://i.ibb.co/FJh5fnW/Logo-completo-min.png'
+            src={ImagenLogo}
             width={50}
             height={50}
             blur='blur'

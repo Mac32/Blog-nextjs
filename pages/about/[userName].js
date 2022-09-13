@@ -29,6 +29,7 @@ export default function About ({ usuario }) {
         />
       </Head>
       <div>
+        {console.log('idno usuario',usuario)}
         <SectionSobreMi fullName={`${usuario.firstName} ${usuario.lastName}`} userTwitter={usuario.userTwitter} informacion={usuario.description} />
 
       </div>

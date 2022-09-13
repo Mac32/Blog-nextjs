@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Logo from 'components/elements/Logo'
+import ImagenLogo from 'public/image/LogoComprimido.png'
 
 const ButtonMenu = dynamic(import('./elements/ButtonMenu'))
 const Avatar = dynamic(import('./elements/Avatar'))
@@ -13,7 +14,7 @@ export default function AppBar () {
   }
 
   return (
-    <nav className='bg-gray-800 border-b-2 border-gray-900'>
+    <nav className='bg-gray-800'>
       <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -39,10 +40,10 @@ export default function AppBar () {
                 <div className='flex-shrink-0 flex items-center'>
                   <Logo
                     className='rounded-full'
-                    src='https://i.ibb.co/FJh5fnW/Logo-completo-min.png'
+                    src={ImagenLogo}
                     alt='Logo de la pagina'
-                    width={35}
-                    height={35}
+                    width={45}
+                    height={45}
                   />
                 </div>
               </a>
@@ -50,9 +51,7 @@ export default function AppBar () {
             <div className='hidden sm:block sm:ml-6'>
               <div className='flex space-x-4'>
 
-                <Link href='/'>
-                  <a className='hover:bg-gray-700 text-gray-300 px-3 py-2 rounded-md text-sm font-medium'>Inicio</a>
-                </Link>
+              <ButtonMenu ruta='/'>Inicio</ButtonMenu>
 
               </div>
             </div>
@@ -65,7 +64,7 @@ export default function AppBar () {
       <div id='menuMobil' className='hidden sm:hidden'>
         <div className='px-2 pt-2 pb-3 space-y-1'>
 
-          <ButtonMenu texto='Inicio' ruta='/' />
+          <ButtonMenu ruta='/'>Inicio</ButtonMenu>
 
         </div>
       </div>

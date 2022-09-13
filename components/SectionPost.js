@@ -13,7 +13,7 @@ const SectionPost = ({ publicaciones }) => {
     rounded-lg
     shadow-md mb-6'
     >
-      <H2 texto='Publicaciones' />
+      <H2>Publicaciones</H2>
       <div className='
        flex flex-col md:flex-row '
       >

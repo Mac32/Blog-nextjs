@@ -8,9 +8,8 @@ export default function ArticuloAutorPost ({ autor }) {
       <H3>Autor</H3>
       <hr />
       <div className='flex flex-row flex-wrap py-6'>
-        {console.log('articulos', autor)}
-        <Avatar userTwitter={autor.userTwitter} />
-        <div className='ml-4 flex flex-col'>
+        <Avatar userName={autor.userName} userTwitter={autor.userTwitter} />
+        <div className='ml-4 flex self-center flex-col'>
           <p className='text-gray-800'>{`${autor.firstName} ${autor.lastName}`}</p>
         </div>
       </div>
