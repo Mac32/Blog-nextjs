@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Post from '../../models/Post'
 import dbConnect from '../../lib/mongoConect'
+import { Remark } from 'react-remark'
 
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
@@ -52,8 +53,10 @@ const Publication = ({ res }) => {
                 <div className='h-48 bg-center bg-cover rounded-t-md' style={{ backgroundImage: 'url(' + post.urlImage + ')' }}>
                   <img className='hidden' src={post.urlImage} alt={post.descriptionImage} />
                 </div>
-                <H2 texto={post.title} />
-                <div className='m-6 sm:m-9 text-gray-700' dangerouslySetInnerHTML={{ __html: post.content }} />
+                <H2>{post.title}</H2>
+                <div className='p-2 md:p-6'>
+                  <Remark>{post.content}</Remark>
+                </div>
               </div>
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
@@ -102,6 +105,7 @@ export async function getStaticProps ({ params }) {
   res._id = res._id.toString()
   res.author._id = res.author._id.toString()
   res.date = JSON.stringify(res.date)
+
   return {
     props: {
       res

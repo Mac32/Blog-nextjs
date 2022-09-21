@@ -11,7 +11,7 @@ const Comentarios = ({ postId, postTitle }) => {
     }
 
     return (
-      <div>
+      <div className='mx-6 md:w-4/5 md:mx-auto'>
         {
           (postId && postTitle)
             ? <DiscussionEmbed

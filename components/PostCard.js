@@ -15,7 +15,7 @@ function PostCard ({ publicacion }) {
     <div className='rounded-md shadow-md max-w-sm m-auto  md:m-3 '>
       <Link href={`/post/${publicacion.postPath}`}>
         <a>
-          <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.imagen + ')' }}>
+          <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.urlImage + ')' }}>
             <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
           </figure>
         </a>
