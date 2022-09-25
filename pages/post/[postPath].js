@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Post from '../../models/Post'
 import dbConnect from '../../lib/mongoConect'
-import { Remark } from 'react-remark'
-
+import PostContent from 'components/PostContent'
+import 'components/PostContent/PostContent.module.css'
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
@@ -54,9 +54,7 @@ const Publication = ({ res }) => {
                   <img className='hidden' src={post.urlImage} alt={post.descriptionImage} />
                 </div>
                 <H2>{post.title}</H2>
-                <div className='p-2 md:p-6'>
-                  <Remark>{post.content}</Remark>
-                </div>
+                <PostContent>{post.content}</PostContent>
               </div>
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
@@ -65,7 +63,7 @@ const Publication = ({ res }) => {
             : null
         }
       </div>
-      <Comentarios postId={post.postPath} postTitle={post.title} />
+      {/* <Comentarios postId={post.postPath} postTitle={post.title} /> */}
     </>
   )
 }

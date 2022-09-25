@@ -29,9 +29,7 @@ export default function About ({ usuario }) {
         />
       </Head>
       <div>
-        {console.log('idno usuario',usuario)}
         <SectionSobreMi fullName={`${usuario.firstName} ${usuario.lastName}`} userTwitter={usuario.userTwitter} informacion={usuario.description} />
-
       </div>
     </>
   )
@@ -49,7 +47,7 @@ export async function getStaticPaths () {
       }
     })
   } catch (error) {
-    console.log(error)
+    console.log('Error en getStaticPaths', error)
   }
   return {
     paths,
@@ -66,7 +64,7 @@ export async function getStaticProps ({ params }) {
     usuario = respuesta.toObject()
     usuario._id = usuario._id.toString()
   } catch (error) {
-    console.log(error)
+    console.log('Error en getStaticPaths', error)
   }
 
   return {

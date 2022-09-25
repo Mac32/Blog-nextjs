@@ -15,7 +15,7 @@ const SectionPost = ({ publicaciones }) => {
     >
       <H2>Publicaciones</H2>
       <div className='
-       flex flex-col md:flex-row '
+       grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
       >
         {
           publicaciones && publicaciones !== undefined

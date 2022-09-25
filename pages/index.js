@@ -18,7 +18,6 @@ export default function App ({ publicaciones }) {
           type='application/ld+json' dangerouslySetInnerHTML={{
             __html: JSON.stringify(
               {
-
                 '@context': 'https://schema.org',
                 '@type': 'BlogPosting',
                 '@id': 'https://codigofuente.vercel.app',
@@ -35,31 +34,34 @@ export default function App ({ publicaciones }) {
 
       <Hero />
       <Section publicaciones={publicaciones} />
-
     </>
   )
 }
 
 export async function getStaticProps () {
-  await dbConnect()
-  const result = await Post.find({}).select({
-    visibility: 1,
-    title: 1,
-    postPath: 1,
-    author: 1,
-    date: 1,
-    summary: 1,
-    urlImage: 1,
-    imageDescription: 1
-  }).populate('author', 'userName firstName lastName userTwitter').exec()
-
+  let result
+  try {
+    await dbConnect()
+    result = await Post.find({ visibility: 'Public' }).select({
+      visibility: 1,
+      title: 1,
+      postPath: 1,
+      author: 1,
+      date: 1,
+      summary: 1,
+      urlImage: 1,
+      imageDescription: 1
+    }).populate('author', 'userName firstName lastName userTwitter').exec()
+  } catch (error) {
+    console.log('A ocurrido un error', error)
+  }
   const publicaciones = result.map((doc) => {
     const post = doc.toObject()
     post._id = post._id.toString()
     post.author._id = post.author._id.toString()
     post.date = JSON.stringify(post.date)
     return post
-  })
+  }).reverse()
 
   return {
     props: {

@@ -32,15 +32,11 @@ function PostCard ({ publicacion }) {
         <P>
           <Link href={`/post/${publicacion.postPath}`}>
             <a>
-              {publicacion.summary}
+              {publicacion.summary.substring(0, 220) + '...'}
             </a>
           </Link>
         </P>
-        <Link href={`/about/${publicacion.author.userName}`}>
-          <a>
-            <ArticuloAutor userName={publicacion.author.userName} autor={publicacion.author} fecha={publicacion.date} />
-          </a>
-        </Link>
+        <ArticuloAutor userName={publicacion.author.userName} autor={publicacion.author} fecha={publicacion.date} />
       </div>
     </div>
   )
