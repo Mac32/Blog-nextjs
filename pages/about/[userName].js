@@ -2,10 +2,15 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Usuario from 'models/Usuario'
 import dbConnect from 'lib/mongoConect'
+import { useEffect, useState } from 'react'
 
 const SectionSobreMi = dynamic(import('components/SectionSobreMi'))
 
-export default function About ({ usuario }) {
+export default function About ({ user }) {
+  const [usuario, setUsuario] = useState({})
+  useEffect(() => {
+    setUsuario(user)
+  }, [user])
   return (
     <>
       <Head>
@@ -17,8 +22,8 @@ export default function About ({ usuario }) {
 
                 '@context': 'https://schema.org',
                 '@type': 'BlogPosting',
-                '@id': 'https://codigofuente.vercel.app/About',
-                headline: 'Alberth Bompart - Desarrollador Web Front-end',
+                '@id': `elblogdemalbo.com/about/${usuario.userTwitter}`,
+                headline: `El blog de malbo - ${usuario.firstName} ${usuario.lastName}`,
                 description: `${usuario.description}`,
                 image: [
                 `https://unavatar.io/twitter/${usuario.userTwitter}`
@@ -29,7 +34,7 @@ export default function About ({ usuario }) {
         />
       </Head>
       <div>
-        <SectionSobreMi fullName={`${usuario.firstName} ${usuario.lastName}`} userTwitter={usuario.userTwitter} informacion={usuario.description} />
+        <SectionSobreMi userTwitter={usuario.userTwitter} informacion={usuario.description} />
       </div>
     </>
   )
@@ -69,7 +74,7 @@ export async function getStaticProps ({ params }) {
 
   return {
     props: {
-      usuario
+      user: usuario
     },
     revalidate: 10
   }
