@@ -25,7 +25,7 @@ const Publication = ({ res }) => {
       <Head>
 
         <meta name='description' content={post.title} />
-        <title>{post.title}</title>
+        <title>{`${post.title} - El blog de malbo`}</title>
         <script
           type='application/ld+json' dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -33,7 +33,7 @@ const Publication = ({ res }) => {
 
                 '@context': 'https://schema.org',
                 '@type': 'BlogPosting',
-                '@id': `https://codigofuente.vercel.app/post/${post.id}`,
+                '@id': `https://elblogdemalbo.com/post/${post.postPath}`,
                 headline: `${post.title}`,
                 description: `${post.title}`,
                 image: [
@@ -63,7 +63,7 @@ const Publication = ({ res }) => {
             : null
         }
       </div>
-      {/* <Comentarios postId={post.postPath} postTitle={post.title} /> */}
+      <Comentarios postPath={post.postPath} postTitle={post.title} />
     </>
   )
 }

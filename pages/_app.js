@@ -10,7 +10,7 @@ function MyApp ({ Component, pageProps }) {
     <>
       <div className='has-navbar-fixed-top'>
         <Head>
-          <title>Blog - Código Fuente</title>
+          <title>Blog - El blog de Malbo</title>
           <link rel='icon' href='/logo.ico' />
         </Head>
         <Header />

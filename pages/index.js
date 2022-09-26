@@ -10,9 +10,8 @@ export default function App ({ publicaciones }) {
   return (
     <>
       <Head>
-        <meta name='google-site-verification' content={process.env.GOOGLE_SITE_VERIFICATION} />
         <meta name='description' content='Blog de desarrollo web donde encontraras articulos sobre tecnologias como HTML, CSS, JavaScript, frameworks y mas sobre el mundo de la tecnoligia' />
-        <title>Blog - Código Fuente</title>
+        <title>Blog - El blog de Malbo</title>
         <link rel='icon' href='/logo.ico' />
         <script
           type='application/ld+json' dangerouslySetInnerHTML={{
@@ -20,11 +19,11 @@ export default function App ({ publicaciones }) {
               {
                 '@context': 'https://schema.org',
                 '@type': 'BlogPosting',
-                '@id': 'https://codigofuente.vercel.app',
-                headline: 'CodigoFuente - Blog de desarrollo y Programacion',
+                '@id': 'https://elblogdemalbo.com',
+                headline: 'El blog de malbo - Blog de desarrollo y Programacion',
                 description: 'Blog sobre desarrollo tanto de web como nativo, con explicaciones simples y faciles de entender',
                 image: [
-                  'https://i.ibb.co/FJh5fnW/Logo-completo-min.png'
+                  'https://i.ibb.co/BPTrBYz/Logo-Comprimido.png'
                 ]
               }
             )
