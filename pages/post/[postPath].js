@@ -49,7 +49,7 @@ const Publication = ({ res }) => {
         {
           post && post !== undefined
             ? <>
-              <article className='prose prose-a:text-blue-600 prose-a:underline prose-p:text-gray-700 prose-h2:text-gray-700 prose-h3:text-gray-700 prose-strong:text-gray-700 prose-img:mx-auto sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto'>
+              <article className='prose prose-a:text-blue-600 prose-a:underline prose-p:text-gray-700 prose-h2:text-gray-700 prose-h3:text-gray-700 prose-strong:text-gray-700 prose-hr:mb-0 xl:prose-hr:mb-0 lg:prose-hr:mb-0 md:prose-hr:mb-0 prose-img:mx-auto sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto'>
                 <div className='h-48 bg-center bg-cover rounded-t-md' style={{ backgroundImage: 'url(' + post.urlImage + ')' }}>
                   <img className='hidden' src={post.urlImage} alt={post.descriptionImage} />
                 </div>
