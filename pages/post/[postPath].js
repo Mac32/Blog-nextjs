@@ -5,6 +5,7 @@ import Post from '../../models/Post'
 import dbConnect from '../../lib/mongoConect'
 import PostContent from 'components/PostContent'
 import 'components/PostContent/PostContent.module.css'
+import SectionShare from 'components/SectionShare'
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
@@ -56,6 +57,7 @@ const Publication = ({ res }) => {
                 <H2>{post.title}</H2>
                 <PostContent>{post.content}</PostContent>
               </article>
+              <SectionShare url={`https://elblogdemalbo.com/post/${post.postPath}`} />
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
 
