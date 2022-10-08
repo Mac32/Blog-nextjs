@@ -6,7 +6,9 @@ export default function H2 ({ children }) {
       <h2 className='
     text-2xl
      mt-9
-     mb-2
+     mb-0
+     md:mb-0
+     lg:mb-0
     font-extrabold
      text-gray-700
      md:text-4xl
