@@ -7,6 +7,8 @@ import PostContent from 'components/PostContent'
 import 'components/PostContent/PostContent.module.css'
 import SectionShare from 'components/SectionShare'
 import FechaPost from 'components/FechaPost'
+import LdJsonPost from 'components/LdJsonPost'
+import OpenGraphProtocolForPost from 'components/OpenGraphProtocolForPost'
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
@@ -28,23 +30,8 @@ const Publication = ({ res }) => {
 
         <meta name='description' content={post.title} />
         <title>{`${post.title} - El blog de malbo`}</title>
-        <script
-          type='application/ld+json' dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-
-                '@context': 'https://schema.org',
-                '@type': 'BlogPosting',
-                '@id': `https://elblogdemalbo.com/post/${post.postPath}`,
-                headline: `${post.title}`,
-                description: `${post.title}`,
-                image: [
-                `${post.urlImage}`
-                ]
-              }
-            )
-          }}
-        />
+        <LdJsonPost post={post} />
+        <OpenGraphProtocolForPost post={post} />
 
       </Head>
       <div className='container mx-auto shadow-md m-6'>
@@ -63,7 +50,7 @@ const Publication = ({ res }) => {
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
 
-            </>
+              </>
             : null
         }
       </div>
