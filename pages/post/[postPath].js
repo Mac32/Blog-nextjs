@@ -30,7 +30,23 @@ const Publication = ({ res }) => {
 
         <meta name='description' content={post.title} />
         <title>{`${post.title} - El blog de malbo`}</title>
-        <LdJsonPost post={post} />
+        <script
+          type='application/ld+json' dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+
+                '@context': 'https://schema.org',
+                '@type': 'BlogPosting',
+                '@id': `https://elblogdemalbo.com/post/${post.postPath}`,
+                headline: `${post.title}`,
+                description: `${post.title}`,
+                image: [
+                `${post.urlImage}`
+                ]
+              }
+            )
+          }}
+        />
         <meta property='og:title' content={post.title} />
         <meta property='og:type' content='article' />
         <meta property='og:url' content={`https://elblogdemalbo.com/post/${post.postPath}`} />
@@ -56,7 +72,7 @@ const Publication = ({ res }) => {
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
 
-            </>
+              </>
             : null
         }
       </div>
