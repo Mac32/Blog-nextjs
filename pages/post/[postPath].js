@@ -31,7 +31,13 @@ const Publication = ({ res }) => {
         <meta name='description' content={post.title} />
         <title>{`${post.title} - El blog de malbo`}</title>
         <LdJsonPost post={post} />
-        <OpenGraphProtocolForPost post={post} />
+        <meta property='og:title' content={post.title} />
+        <meta property='og:type' content='article' />
+        <meta property='og:url' content={`https://elblogdemalbo.com/post/${post.postPath}`} />
+        <meta property='article:published_time' content={post.date} />
+        <meta property='article:author' content={post.author} />
+        <meta property='article:tag' content={post.tags} />
+        <meta property='og:image' content={post.urlImage} />
 
       </Head>
       <div className='container mx-auto shadow-md m-6'>
@@ -50,7 +56,7 @@ const Publication = ({ res }) => {
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
 
-              </>
+            </>
             : null
         }
       </div>
