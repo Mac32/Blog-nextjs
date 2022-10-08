@@ -39,7 +39,7 @@ const Publication = ({ res }) => {
                 '@type': 'BlogPosting',
                 '@id': `https://elblogdemalbo.com/post/${post.postPath}`,
                 headline: `${post.title}`,
-                description: `${post.title}`,
+                description: `${post.summary}`,
                 image: [
                 `${post.urlImage}`
                 ]
@@ -72,7 +72,7 @@ const Publication = ({ res }) => {
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
 
-              </>
+            </>
             : null
         }
       </div>
