@@ -16,8 +16,6 @@ import {
 } from 'next-share'
 
 const SectionShare = ({ url }) => {
-  console.log('🚀 ~ file: SectionShare.js ~ line 4 ~ SectionShare ~ url', url)
-
   return (
     <div className='my-3 text-center'>
       <h3 className='text-xl mb-3 underline-offset-2 underline text-gray-700'>Compartir</h3>
