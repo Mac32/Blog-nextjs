@@ -1,7 +1,7 @@
 import imageLogo from 'public/image/LogoComprimido.png'
 import Image from 'next/image'
 
-const Logo = ({ alt = 'Imagen', height = 100, width = 100 }) => {
+const Logo = ({ alt = 'Imagen', height = '100', width = '100' }) => {
   return (
     <Image
       className='rounded-full'

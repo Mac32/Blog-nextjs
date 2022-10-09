@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function Avatar ({ userTwitter, userName, className = '', alt = 'Imagen', width = 50, height = 50 }) {
+export default function Avatar ({ userTwitter, userName, className = '', alt = 'Imagen', width = '50', height = '50' }) {
   if (userTwitter === '' || userTwitter === undefined) {
     userTwitter = 'xxx'
   }

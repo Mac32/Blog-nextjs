@@ -7,8 +7,7 @@ import PostContent from 'components/PostContent'
 import 'components/PostContent/PostContent.module.css'
 import SectionShare from 'components/SectionShare'
 import FechaPost from 'components/FechaPost'
-import LdJsonPost from 'components/LdJsonPost'
-import OpenGraphProtocolForPost from 'components/OpenGraphProtocolForPost'
+import { NextSeo } from 'next-seo'
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
@@ -26,36 +25,29 @@ const Publication = ({ res }) => {
 
   return (
     <>
-      <Head>
-
-        <meta name='description' content={post.title} />
-        <title>{`${post.title} - El blog de malbo`}</title>
-        <script
-          type='application/ld+json' dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
+      <NextSeo
+        title={`${post.title} - El blog de malbo`}
+        description={post.summary}
+        canonical={`https://www.elblogdemalbo.com/post/${post.postPath}`}
+        openGraph={
+          {
+            url: 'https://www.elblogdemalbo.com/post/' + post.postPath,
+            title: post.title,
+            description: post.summary,
+            image: [
               {
-
-                '@context': 'https://schema.org',
-                '@type': 'BlogPosting',
-                '@id': `https://elblogdemalbo.com/post/${post.postPath}`,
-                headline: `${post.title}`,
-                description: `${post.summary}`,
-                image: [
-                `${post.urlImage}`
-                ]
+                url: post.urlImage,
+                width: 800,
+                height: 600,
+                alt: post.imageDescription,
+                type: 'image/jpeg'
               }
-            )
-          }}
-        />
-        <meta property='og:title' content={post.title} />
-        <meta property='og:type' content='article' />
-        <meta property='og:url' content={`https://elblogdemalbo.com/post/${post.postPath}`} />
-        <meta property='article:published_time' content={post.date} />
-        <meta property='article:author' content={post.author} />
-        <meta property='article:tag' content={post.tags} />
-        <meta property='og:image' content={post.urlImage} />
+            ],
+            site_name: 'El Blog de Malbo'
+          }
+      }
+      />
 
-      </Head>
       <div className='container mx-auto shadow-md m-6'>
         {
           post && post !== undefined
@@ -72,7 +64,7 @@ const Publication = ({ res }) => {
               <hr />
               <PostFooter autor={post.author} tags={post.tags} />
 
-            </>
+              </>
             : null
         }
       </div>

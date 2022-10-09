@@ -19,7 +19,7 @@ export default function AppBar () {
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
             {/* Mobile menu button */}
-            <button onClick={eventoMenu} className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
+            <button aria-label='Boton de menu' onClick={eventoMenu} className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
 
               {/* Iconos del boton de menu */}
               <svg id='iconoBurger' className=' h-6 w-6' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' aria-hidden='true'>
