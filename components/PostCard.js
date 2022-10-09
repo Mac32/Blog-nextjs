@@ -13,9 +13,13 @@ function PostCard ({ publicacion }) {
 
   return (
     <div className='rounded-md shadow-md max-w-sm m-auto  md:m-3 '>
-      <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.urlImage + ')' }}>
-        <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
-      </figure>
+      <Link href={`/post/${publicacion.postPath}`}>
+        <a area-label={publicacion.imageDescription}>
+          <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.urlImage + ')' }}>
+            <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
+          </figure>
+        </a>
+      </Link>
       <div className='m-6'>
         <H3>
           <Link href={`/post/${publicacion.postPath}`}>
