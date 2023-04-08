@@ -10,7 +10,7 @@ export default function App ({ publicaciones }) {
   return (
     <>
       <Head>
-        <meta name='description' content='Blog de desarrollo web donde encontraras articulos sobre tecnologias como HTML, CSS, JavaScript, frameworks y mas sobre el mundo de la tecnoligia' />
+        <meta name='description' content='Blog de desarrollo web donde encontraras articulos sobre tecnologias como HTML, CSS, JavaScript, frameworks y mas sobre el mundo de la tecnologia' />
         <title>Blog - El blog de Malbo</title>
         <link rel='icon' href='/logo.ico' />
         <script
