@@ -10,8 +10,8 @@ export default function ArticuloAutor ({ userName, autor, fecha }) {
     <div className='flex flex-row flex-wrap py-6'>
       <Avatar userTwitter={autor.userTwitter} userName={userName} />
       <div className='ml-4 flex flex-col'>
-        <Link href={`/about/${userName}`}>
-          <a className='text-gray-800'>{`${firstName} ${lastName}`}</a>
+        <Link className='text-gray-800' href={`/about/${userName}`}>
+          {`${firstName} ${lastName}`}
         </Link>
         <Fecha fecha={fecha} />
       </div>

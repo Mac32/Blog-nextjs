@@ -7,16 +7,14 @@ export default function Avatar ({ userTwitter, userName, className = '', alt = '
   }
 
   return (
-    <Link href={`/about/${userName}`}>
-      <a className='flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ' aria-haspopup='true'>
-        <Image
-          className={'h-12 w-12 rounded-full ' + className}
-          src={`https://unavatar.io/twitter/${userTwitter}`}
-          alt={alt}
-          width={width}
-          height={height}
-        />
-      </a>
+    <Link className='flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ' aria-haspopup='true' href={`/about/${userName}`}>
+      <Image
+        className={'h-12 w-12 rounded-full ' + className}
+        src={`https://unavatar.io/twitter/${userTwitter}`}
+        alt={alt}
+        width={width}
+        height={height}
+      />
     </Link>
   )
 }

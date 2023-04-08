@@ -35,23 +35,21 @@ export default function AppBar () {
           {/* Menu para pantallas grandes */}
           <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
             <Link href='/'>
-              <a>
 
-                <div className='flex-shrink-0 flex items-center'>
-                  <Logo
-                    className='rounded-full'
-                    src={ImagenLogo}
-                    alt='Logo de la pagina'
-                    width={45}
-                    height={45}
-                  />
-                </div>
-              </a>
+              <div className='flex-shrink-0 flex items-center'>
+                <Logo
+                  className='rounded-full'
+                  src={ImagenLogo}
+                  alt='Logo de la pagina'
+                  width={45}
+                  height={45}
+                />
+              </div>
             </Link>
             <div className='hidden sm:block sm:ml-6'>
               <div className='flex space-x-4'>
 
-              <ButtonMenu ruta='/'>Inicio</ButtonMenu>
+                <ButtonMenu ruta='/'>Inicio</ButtonMenu>
 
               </div>
             </div>

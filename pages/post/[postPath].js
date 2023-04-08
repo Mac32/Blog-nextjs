@@ -108,7 +108,7 @@ export async function getStaticProps ({ params }) {
     console.log(error)
   }
 
-  const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()
+  const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()  
   const res = await respuesta.toObject()
   res._id = res._id.toString()
   res.author._id = res.author._id.toString()

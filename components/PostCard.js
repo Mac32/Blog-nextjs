@@ -14,26 +14,20 @@ function PostCard ({ publicacion }) {
   return (
     <div className='rounded-md shadow-md max-w-sm m-auto  md:m-3 '>
       <Link href={`/post/${publicacion.postPath}`}>
-        <a area-label={publicacion.imageDescription}>
-          <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.urlImage + ')' }}>
-            <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
-          </figure>
-        </a>
+        <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.urlImage + ')' }}>
+          <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
+        </figure>
       </Link>
       <div className='m-6'>
         <H3>
           <Link href={`/post/${publicacion.postPath}`}>
-            <a>
-              {publicacion.title}
-            </a>
+            {publicacion.title}
           </Link>
         </H3>
         <hr />
         <P>
           <Link href={`/post/${publicacion.postPath}`}>
-            <a>
-              {publicacion.summary.substring(0, 220) + '...'}
-            </a>
+            {publicacion.summary.substring(0, 220) + '...'}
           </Link>
         </P>
         <ArticuloAutor userName={publicacion.author.userName} autor={publicacion.author} fecha={publicacion.date} />

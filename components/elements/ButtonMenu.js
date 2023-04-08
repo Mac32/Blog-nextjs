@@ -3,9 +3,8 @@ import Link from 'next/link'
 
 export default function ButtonMenu ({ children, ruta }) {
   return (
-    <Link href={ruta}>
-
-      <a className='
+    <Link
+      className='
     cursor-pointer
     text-gray-300
     font-bold
@@ -14,10 +13,10 @@ export default function ButtonMenu ({ children, ruta }) {
     py-2
     rounded-md
     text-xl
-    hover:bg-gray-700'
-      >
-        {children}
-      </a>
+    hover:bg-gray-700' href={ruta}
+    >
+
+      {children}
     </Link>
   )
 }
