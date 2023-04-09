@@ -47,6 +47,7 @@ export async function getStaticProps () {
       postPath: 1,
       author: 1,
       date: 1,
+      category: 1,
       summary: 1,
       urlImage: 1,
       imageDescription: 1

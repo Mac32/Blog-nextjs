@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import Tag from './elements/Tag'
+import PostCategory from './elements/PostCategory'
 
 const ArticuloAutor = dynamic(import('./ArticuloAutor'))
 const H3 = dynamic(import('./elements/H3'))
@@ -8,7 +10,6 @@ const P = dynamic(import('./elements/P'))
 
 function PostCard ({ publicacion }) {
   useEffect(() => {
-
   }, [publicacion])
 
   return (
@@ -30,6 +31,8 @@ function PostCard ({ publicacion }) {
             {publicacion.summary.substring(0, 220) + '...'}
           </Link>
         </P>
+        <P><span className='font-semibold'>Categoría:</span></P>
+        <PostCategory category={publicacion.category}/>
         <ArticuloAutor userName={publicacion.author.userName} autor={publicacion.author} fecha={publicacion.date} />
       </div>
     </div>

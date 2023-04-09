@@ -71,7 +71,7 @@ const Publication = ({ res }) => {
               </article>
               <SectionShare url={`https://elblogdemalbo.com/post/${post.postPath}`} />
               <hr />
-              <PostFooter autor={post.author} tags={post.tags} />
+              <PostFooter category={post.category} autor={post.author} tags={post.tags} />
 
               </>
             : null
