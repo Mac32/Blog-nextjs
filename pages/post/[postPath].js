@@ -7,9 +7,11 @@ import PostContent from 'components/PostContent'
 import 'components/PostContent/PostContent.module.css'
 import SectionShare from 'components/SectionShare'
 import FechaPost from 'components/FechaPost'
+import { useRouter } from 'next/router'
 const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
+const Not_found = dynamic(import('../not_found'))
 
 const Publication = ({ res }) => {
   const [post, setPost] = useState({})
@@ -21,6 +23,8 @@ const Publication = ({ res }) => {
   }, [res])
 
   if (loading) return <p>Cargarndo...</p>
+
+  if(post === null || post === undefined ) return <Not_found />
 
   return (
     <>
@@ -102,18 +106,24 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }) {
   const { postPath } = params
+  let res = null
+
   try {
     await dbConnect()
   } catch (error) {
     console.log(error)
   }
+  try{
 
   const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()  
-  const res = await respuesta.toObject()
+  res = await respuesta.toObject()
   res._id = res._id.toString()
   res.author._id = res.author._id.toString()
   res.date = JSON.stringify(res.date)
-
+}
+catch(error) {
+  console.log(error.toString())
+}
   return {
     props: {
       res
