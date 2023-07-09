@@ -50,6 +50,7 @@ export default function AppBar () {
               <div className='flex space-x-4'>
 
                 <ButtonMenu ruta='/'>Inicio</ButtonMenu>
+                <ButtonMenu ruta='/aboutTheBlog'>Sobre el Blog</ButtonMenu>
 
               </div>
             </div>

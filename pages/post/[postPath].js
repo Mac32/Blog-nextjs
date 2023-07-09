@@ -24,7 +24,7 @@ const Publication = ({ res }) => {
 
   if (loading) return <p>Cargarndo...</p>
 
-  if(post === null || post === undefined ) return <Not_found />
+  if (post === null || post === undefined) return <Not_found />
 
   return (
     <>
@@ -113,17 +113,15 @@ export async function getStaticProps ({ params }) {
   } catch (error) {
     console.log(error)
   }
-  try{
-
-  const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()  
-  res = await respuesta.toObject()
-  res._id = res._id.toString()
-  res.author._id = res.author._id.toString()
-  res.date = JSON.stringify(res.date)
-}
-catch(error) {
-  console.log(error.toString())
-}
+  try {
+    const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()
+    res = await respuesta.toObject()
+    res._id = res._id.toString()
+    res.author._id = res.author._id.toString()
+    res.date = JSON.stringify(res.date)
+  } catch (error) {
+    console.log(error.toString())
+  }
   return {
     props: {
       res
