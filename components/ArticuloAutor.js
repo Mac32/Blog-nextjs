@@ -8,7 +8,7 @@ export default function ArticuloAutor ({ userName, autor, fecha }) {
   const { firstName, lastName } = autor
   return (
     <div className='flex flex-row flex-wrap py-6'>
-      <Avatar userTwitter={autor.userTwitter} userName={userName} />
+      <Avatar urlImage={autor.urlImage} userName={userName} />
       <div className='ml-4 flex flex-col'>
         <Link className='text-gray-800' href={`/about/${userName}`}>
           {`${firstName} ${lastName}`}

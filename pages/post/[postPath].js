@@ -12,6 +12,7 @@ const PostFooter = dynamic(import('../../components/PostFooter'))
 const H2 = dynamic(import('../../components/elements/H2'))
 const Comentarios = dynamic(import('../../components/Comentarios'))
 const Not_found = dynamic(import('../not_found'))
+const CodeHightlight = dynamic(import('../../components/elements/CodeHighlighter'))
 
 const Publication = ({ res }) => {
   const [post, setPost] = useState({})
@@ -78,6 +79,7 @@ const Publication = ({ res }) => {
         }
       </div>
       <Comentarios postPath={post.postPath} postTitle={post.title} />
+      <CodeHightlight />
     </>
   )
 }
@@ -114,7 +116,7 @@ export async function getStaticProps ({ params }) {
     console.log(error)
   }
   try {
-    const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName userTwitter').exec()
+    const respuesta = await Post.findOne({ postPath }).populate('author', 'userName firstName lastName urlImage').exec()
     res = await respuesta.toObject()
     res._id = res._id.toString()
     res.author._id = res.author._id.toString()

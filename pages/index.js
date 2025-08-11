@@ -51,7 +51,7 @@ export async function getStaticProps () {
       summary: 1,
       urlImage: 1,
       imageDescription: 1
-    }).populate('author', 'userName firstName lastName userTwitter').exec()
+    }).populate('author', 'userName firstName lastName userTwitter urlImage').exec()
   } catch (error) {
     console.log('A ocurrido un error', error)
   }
