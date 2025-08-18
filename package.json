@@ -4,32 +4,32 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "postbuild": "next-sitemap",
     "export": "next export",
     "deploy": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@loadable/component": "5.15.3",
-    "disqus-react": "1.1.5",
-    "mongoose": "7.0.3",
-    "next": "13.3.0",
-    "next-seo": "6.0.0",
-    "next-share": "0.20.0",
-    "next-sitemap": "4.0.6",
+    "disqus-react": "1.1.7",
+    "mongoose": "8.17.1",
+    "next": "15.4.6",
+    "next-seo": "6.8.0",
+    "next-share": "0.27.0",
+    "next-sitemap": "4.2.3",
     "prismjs": "^1.30.0",
-    "prop-types": "15.8.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-remark": "2.1.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "0.5.9",
-    "autoprefixer": "10.4.14",
-    "postcss": "8.4.21",
-    "standard": "17.0.0",
-    "tailwindcss": "3.3.1"
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "tailwindcss": "^4"
   }
 }
