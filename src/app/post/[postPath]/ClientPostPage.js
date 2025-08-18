@@ -7,6 +7,7 @@ import PostFooter from "@/components/PostFooter";
 import H2 from "@/components/elements/H2";
 import Comentarios from "@/components/Comentarios";
 import CodeHighlight from "@/components/elements/CodeHighlighter";
+import Image from "next/image";
 
 export default function ClientPostPage({ post }) {
   const postUrl = `https://elblogdemalbo.com/post/${post.postPath}`;
@@ -33,7 +34,7 @@ export default function ClientPostPage({ post }) {
             className="h-48 bg-center bg-cover rounded-t-md"
             style={{ backgroundImage: `url(${post.urlImage})` }}
           >
-            <img className="hidden" src={post.urlImage} alt={post.descriptionImage} />
+            <Image className="hidden" src={post.urlImage} width={500} height={500} alt={post.descriptionImage} />
           </div>
           <H2>{post.title}</H2>
           <FechaPost>{post.date}</FechaPost>

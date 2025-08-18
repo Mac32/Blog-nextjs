@@ -21,7 +21,7 @@ export default function AboutTheBlog() {
           <div className='pb-10'>
             <P>Cuando decidí crear este blog, inicialmente tenía la intensión de aprender la tecnologí­a con que lo materialicé (React y NextJS), tenía la intensión de que fuera un blog sobre tecnologí­a, programación y cosas relacionadas con el mundo tech, pero a medida que iba avanzando en su creación me pareció que sería genial que lo usara además de los temas anteriormente mencionados también para publicar cosas de mi interés que fueran distintos al mundo tech (Los cuales son muy variados, como podrán notar a medida que lean el blog) ya sea  literatura, música, ajedrez, idiomas, entre otras cosas.
             </P>
-            <P>De la misma forma, en un principio la intensión era que fuera solo de mi uso exclusivo, pero posteriormente dije: "Por qué no hacer una interfaz que permita a otros escritores (seleccionados por mí) publicar en el blog?", y así agregué esa funcionalidad al blog. Sin más que agregar, agradezco su visita y espero disfrutes el contenido publicado aquí, ya que es hecho con todo el cariño para compartir el conocimiento.</P>
+            <P>De la misma forma, en un principio la intensión era que fuera solo de mi uso exclusivo, pero posteriormente dije: 'Por qué no hacer una interfaz que permita a otros escritores (seleccionados por mí) publicar en el blog?', y así agregué esa funcionalidad al blog. Sin más que agregar, agradezco su visita y espero disfrutes el contenido publicado aquí, ya que es hecho con todo el cariño para compartir el conocimiento.</P>
           </div>
         </div>
       </article>

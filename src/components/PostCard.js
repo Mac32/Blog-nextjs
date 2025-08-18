@@ -2,8 +2,8 @@
 
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import PostCategory from './elements/PostCategory'
-
 import ArticuloAutor from './ArticuloAutor'
 import H3 from './elements/H3'
 import P from './elements/P'
@@ -15,7 +15,7 @@ function PostCard ({ publicacion }) {
     <div className='rounded-md shadow-md max-w-sm m-auto md:m-3 '>
       <Link href={`/post/${publicacion.postPath}`}>
         <figure className='rounded-t-md bg-center bg-cover cursor-pointer h-40' style={{ backgroundImage: 'url(' + publicacion.urlImage + ')' }}>
-          <img className='hidden' src={publicacion.urlImage} alt='Placeholder image' />
+          <Image className='hidden' src={publicacion.urlImage} width={500} height={500} alt='Placeholder image' />
         </figure>
       </Link>
       <div className='m-6'>

@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 
 const H3 = dynamic(import('./elements/H3'))
 const P = dynamic(import('./elements/P'))
@@ -19,7 +20,7 @@ export default function CardProject ({ imagen, titulo, descripcion, ruta }) {
       >
         <a href={ruta} target='_blank' rel='noreferrer'>
           <figure>
-            <img className='md:h-40 rounded-t-md md:rounded-l-md cursor-pointer' src={imagen} alt='Pagina de inicio de blog codigofuente.vercel.app' />
+            <Image className='md:h-40 rounded-t-md md:rounded-l-md cursor-pointer' src={imagen} alt='Pagina de inicio de blog codigofuente.vercel.app' />
           </figure>
         </a>
         {/* Contenido */}
