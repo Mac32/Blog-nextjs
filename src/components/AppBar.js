@@ -23,6 +23,7 @@ export default function AppBar() {
           </Link>
           <div>
             <ButtonMenu ruta='/'>Inicio</ButtonMenu>
+            <ButtonMenu ruta='/categorys'>Categorías</ButtonMenu>
             <ButtonMenu ruta='/aboutTheBlog'>Sobre el Blog</ButtonMenu>
           </div>
         </div>

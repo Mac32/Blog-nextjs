@@ -28,7 +28,7 @@ export default function ClientPostPage({ post }) {
         }}
       />
 
-      <div className="container mx-auto shadow-md m-6">
+      <div className="container mx-auto shadow-md m-6  md:px-20">
         <article className="prose mx-auto">
           <div
             className="h-48 bg-center bg-cover rounded-t-md"

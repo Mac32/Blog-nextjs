@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-export default function Li({ children, index }) {
+
+export default function CardCategory({ children, index }) {
     return (
-        <div className="card bg-base-100 image-full shadow-sm my-1.5">
-            <figure className='relative'>
+        <div className="card bg-base-100 image-full shadow-sm my-1.5 overflow-hidden group w-full md:w-2/5 mx-3 lg:w-3/12">
+            <figure className="relative transition-transform duration-500 transform group-hover:scale-110">
                 <Image
                     fill
                     src={children.image}

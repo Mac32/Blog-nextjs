@@ -7,7 +7,7 @@ import Bar from "./elements/Bar";
 export default function PanelCategory() {
     return (
         <div className='mt-12 m-3.5 flex flex-col md:w-2/5'>
-            <H3>Categorias:</H3>
+            <H3>Categorías:</H3>
 
             <Bar />
             <ul>

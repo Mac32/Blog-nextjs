@@ -1,8 +1,8 @@
 import dbConnect from "@/lib/mongoConect";
 import Post from "@/models/Post";
 import Section from "@/components/Section";
-import Hero from '@/components/Hero'
 import H2 from "@/components/elements/H2";
+import Bar from "@/components/elements/Bar";
 
 async function getPublicaciones(category) {
     let result
@@ -38,17 +38,23 @@ export default async function PublicationPage({ params }) {
     const decoder = decodeURIComponent(category)
     const publicaciones = await getPublicaciones(decoder)
 
-    if (!publicaciones) {
+    if (!publicaciones || publicaciones.length === 0) {
         return (
-            <div>
-                <h1>No hay publicaciones</h1>
+            <div className='my-20'>
+                <Section publicaciones={publicaciones} />
+                <H2>No hay publicaciones en esta categoria </H2>
             </div>
         )
     }
 
     return (
         <>
-            <H2>{decoder}</H2>
+            <H2>
+                Categoría: <span className="text-info">
+                    {decoder}
+                </span>
+            </H2>
+
             <Section publicaciones={publicaciones} />
         </>
     )

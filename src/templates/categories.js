@@ -1,7 +1,7 @@
 const category = [
     {
         name: 'Programación',
-        description: 'Tips de programación, tutoriales, herramientas y más',
+        description: 'Tips de programación, tutoriales, herramientas, experiencias, proyectos y más.',
         image: '/image/banners/ProgrammingCategory.webp',
         alt: "banner de programacion"
     },

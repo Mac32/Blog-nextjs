@@ -19,7 +19,7 @@ const SectionShare = ({ url }) => {
   return (
     <div className='my-3 text-center'>
       <h3 className='text-xl mb-3 underline-offset-2 underline text-gray-700'>Compartir</h3>
-      <div className='grid justify-center grid-flow-col gap-3'>
+      <div className='flex justify-around space-x-2 space-y-2 flex-wrap md:w-4/5 md:mx-auto'>
         <FacebookShareButton url={url}>
           <FacebookIcon size={50} round />
         </FacebookShareButton>

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Bar from './Bar'
 
 export default function H1 ({ children }) {
   return (
@@ -17,7 +18,7 @@ export default function H1 ({ children }) {
       >
         {children}
       </h1>
-      <hr />
+      <Bar />
     </>
   )
 }
