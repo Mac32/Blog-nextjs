@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Head from 'next/head'
 import Footer from "@/components/Footer";
 import "./globals.css";
+import Hero from "@/components/Hero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html data-theme="light" lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -30,7 +31,6 @@ export default function RootLayout({ children }) {
           <link rel='icon' href='/logo.ico' />
         </Head>
         <Header />
-
         {children}
         <Footer />
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function H2 ({ children }) {
   return (
     <>
@@ -10,14 +8,13 @@ export default function H2 ({ children }) {
      md:mb-0
      lg:mb-0
     font-extrabold
-     text-gray-700
+     text-base-content
      md:text-4xl
      xl:text-5xl
      text-center'
       >
         {children}
       </h2>
-      <hr />
     </>
   )
 }

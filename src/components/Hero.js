@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import AppBar from './AppBar'
 
 export default function Hero () {
   useEffect(() => {
@@ -9,7 +10,8 @@ export default function Hero () {
   })
 
   return (
-    <div className='relative bg-gray-800 overflow-hidden bg-center h-96 bg-cover bg-[url("https://i.ibb.co/3B77SjV/laptop-2838917-1920.jpg")]'>
+    <div className='relative bg-gray-800 overflow-hidden bg-center bg-cover bg-[url("/image/heros/hero.webp")]'>
+      <AppBar />
       <div className='max-w-7xl mx-auto'>
         <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32'>
           {/* Crea bloque superior */}
@@ -20,6 +22,7 @@ export default function Hero () {
               <h1 className='text-4xl tracking-tight font-extrabold text-center text-gray-400 sm:text-5xl md:text-7xl'>
                 <span className='px-3 text-indigo-100 border-2 xl:inline'>El Blog de Malbo</span>
               </h1>
+                <p className='mt-3 p-5 rounded-lg text-center text-white backdrop-blur-xs text-2xl font-extrabold'>Programación, idiomas, música, letras, estilo de vida, estrategia y ciberseguridad: tu fuente de conocimiento y tendencias.</p>
             </div>
           </main>
         </div>

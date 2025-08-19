@@ -1,32 +1,38 @@
-import React from 'react'
+import PostCard from '@/components/PostCard'
+import H2 from '@/components/elements/H2'
 
-import PostCard from './PostCard'
-import H2 from './elements/H2'
-
-const SectionPost = ({ publicaciones }) => {
+const SectionPost = ({ publicaciones, title= 'Publicaciones' }) => {
   return (
-    <article className='
+    <div className='flex md:px-10 justify-center w-full'>
+
+      <article className='
      container
      mx-auto
-    md:px-10
-    rounded-lg
-    shadow-md mb-6'
-    >
-      <H2>Publicaciones</H2>
-      <div className='
-       grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+     md:px-10
+     rounded-lg
+     mb-6'
       >
-        {
-          publicaciones && publicaciones !== undefined
-            ? publicaciones.map((publicacion, key) => (
-              <div className='mt-6 ' key={key}>
-                <PostCard publicacion={publicacion} />
-              </div>
-            ))
-            : null
-}
-      </div>
-    </article>
+          <H2>{title}</H2>
+        <div className='divider divider-info'>
+        </div>
+
+        <div className='flex'>
+
+          <div className='flex justify-center flex-wrap w-full'
+          >
+            {
+              publicaciones && publicaciones !== undefined
+                ? publicaciones.map((publicacion, key) => (
+                  <div className='mt-6 ' key={key}>
+                    <PostCard publicacion={publicacion} />
+                  </div>
+                ))
+                : null
+            }
+          </div>
+        </div>
+      </article>
+    </div>
   )
 }
 

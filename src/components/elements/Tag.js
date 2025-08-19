@@ -4,7 +4,7 @@ import A from './A'
 export default function Tag ({ children, ruta = '/' }) {
   return (
     <A ruta={ruta}>
-      <span className='p-1 bg-blue-200 m-1 rounded-md flex text-gray-700 '><IconoEtiqueta />{children}</span>
+      <span className='p-2 py-5 m-1 flex badge badge-outline badge-info '><IconoEtiqueta />{children}</span>
     </A>
   )
 }

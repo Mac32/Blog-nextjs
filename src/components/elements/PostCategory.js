@@ -1,7 +1,11 @@
+import Link from "next/link"
+
 export default function PostCategory({category}){
   return (
-    <div className='bg-blue-200 p-1 rounded-md w-min text-gray-700 text-center'>
+    <div className='badge badge-info py-5 text-white'>
+      <Link href={`/category/${category}`}>
           {category}
+      </Link>
         </div>
   )
 }

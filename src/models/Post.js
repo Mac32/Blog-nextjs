@@ -1,7 +1,6 @@
 import mongoose, { Schema, model } from 'mongoose'
-import Usuario from '@/models/Usuario'
-
-Usuario
+import category from '@/templates/categories'
+import Usuario from './Usuario'
 
 const postSchema = new Schema({
   visibility: {
@@ -36,6 +35,12 @@ const postSchema = new Schema({
   summary: {
     type: String,
     required: [true, 'Please provide the summary']
+  },
+  category: {
+    type: String,
+    required: [true, 'Please provide a category'],
+    enum: category,
+    default: ''
   },
   tags: {
     type: Array

@@ -5,15 +5,7 @@ export default function ButtonMenu ({ children, ruta }) {
   return (
     <Link
       className='
-    cursor-pointer
-    text-gray-300
-    font-bold
-    block text-center
-    px-3
-    py-2
-    rounded-md
-    text-xl
-    hover:bg-gray-700' href={ruta}
+    btn btn-ghost btn-info rounded mx-1 text-base-content text-white' href={ruta}
     >
 
       {children}
