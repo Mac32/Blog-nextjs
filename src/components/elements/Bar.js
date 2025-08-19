@@ -1,5 +1,5 @@
-export default function(){
-    return(
-        <div className="divider divider-info"/>
+export default function Bar() {
+    return (
+        <div className="divider divider-info" />
     )
 }

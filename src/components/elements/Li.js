@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-export default function ({ children, index }) {
+export default function Li({ children, index }) {
     return (
         <div className="card bg-base-100 image-full shadow-sm my-1.5 overflow-hidden group">
             <figure className="transition-transform duration-500 transform group-hover:scale-110">
