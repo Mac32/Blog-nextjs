@@ -2,7 +2,6 @@ import dbConnect from '@/lib/mongoConect'
 import Post from '@/models/Post'
 
 import Section from '@/components/Section'
-import Hero from '@/components/Hero'
 import PanelCategory from '@/components/PanelCategory'
 
 // Metadata (exportada aparte pero en el mismo archivo físico)

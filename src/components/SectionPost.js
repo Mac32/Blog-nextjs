@@ -23,7 +23,7 @@ const SectionPost = ({ publicaciones, title= 'Publicaciones' }) => {
             {
               publicaciones && publicaciones !== undefined
                 ? publicaciones.map((publicacion, key) => (
-                  <div className='mt-6 ' key={key}>
+                  <div className='mt-6 lg:w-1/2' key={key}>
                     <PostCard publicacion={publicacion} />
                   </div>
                 ))
