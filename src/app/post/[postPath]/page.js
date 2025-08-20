@@ -1,6 +1,7 @@
 import dbConnect from "@/lib/mongoConect";
 import Post from "@/models/Post";
 import ClientPostPage from "./ClientPostPage";
+import PanelCategory from "@/components/PanelCategory";
 
 export default async function PublicationPage({ params }) {
   const { postPath } = await params;
@@ -13,7 +14,12 @@ export default async function PublicationPage({ params }) {
     return <div>Publicación no encontrada</div>;
   }
 
-  return <ClientPostPage post={JSON.parse(JSON.stringify(post))} />;
+  return (
+    <div className="flex flex-col-reverse md:flex-row">
+      <PanelCategory />
+      <ClientPostPage post={JSON.parse(JSON.stringify(post))} />
+    </div>
+  )
 }
 
 export async function generateStaticParams() {

@@ -14,7 +14,7 @@ export default function ClientPostPage({ post }) {
 
   return (
     <>
-      <script
+      {/* <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -26,10 +26,10 @@ export default function ClientPostPage({ post }) {
             image: [post.urlImage]
           })
         }}
-      />
+      /> */}
 
-      <div className="container mx-auto shadow-md m-6  md:px-20">
-        <article className="prose mx-auto">
+      <div className="container mx-auto my-6 md:mt-24">
+        <article className="prose prose-a:font-bold prose-a:text-blue-700 mx-auto">
           <div
             className="h-48 bg-center bg-cover rounded-t-md"
             style={{ backgroundImage: `url(${post.urlImage})` }}
@@ -46,9 +46,10 @@ export default function ClientPostPage({ post }) {
 
         <CodeHighlight content={post.content} />
         <PostFooter category={post.category} autor={post.author} tags={post.tags} />
+
+        <Comentarios postPath={post.postPath} postTitle={post.title} />
       </div>
 
-      <Comentarios postPath={post.postPath} postTitle={post.title} />
     </>
   );
 }
