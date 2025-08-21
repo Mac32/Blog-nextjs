@@ -2,7 +2,7 @@ import { Remark } from 'react-remark'
 
 const PostContent = ({ children }) => {
   return (
-    <div className='p-2 text-justify text-gray-800 text-base'>
+    <div className='mx-1 p-2 text-justify text-gray-800 text-base'>
       <Remark>{children}</Remark>
     </div>
   )

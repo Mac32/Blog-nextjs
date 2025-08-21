@@ -34,7 +34,7 @@ export default function ClientPostPage({ post }) {
             className="h-48 bg-center bg-cover rounded-t-md"
             style={{ backgroundImage: `url(${post.urlImage})` }}
           >
-            <Image className="hidden" src={post.urlImage} width={500} height={500} alt={post.descriptionImage} />
+            <Image className="hidden" src={post.urlImage} alt={post.descriptionImage} width={500} height={500} />
           </div>
           <H2>{post.title}</H2>
           <FechaPost>{post.date}</FechaPost>

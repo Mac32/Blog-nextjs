@@ -5,7 +5,7 @@ import Perfil from '@/../public/image/avatar.jpg'
 
 export default function AboutTheBlog() {
   return (
-    <main className='container mx-auto mb-10'>
+    <main className='container mx-auto mb-10 mt-20'>
       <article className='text-justify mt-6 lg:shadow-md'>
 
         <div className='prose prose-a:text-blue-600 prose-a:underline prose-p:text-gray-700 prose-h2:text-gray-700 prose-h3:text-gray-700 prose-strong:text-gray-700 prose-hr:mb-0 xl:prose-hr:mb-0 lg:prose-hr:mb-0 md:prose-hr:mb-0 prose-img:mx-auto sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto'>

@@ -5,7 +5,7 @@ export default function ButtonMenu ({ children, ruta }) {
   return (
     <Link
       className='
-    btn btn-ghost btn-info rounded mx-1 text-base-content text-white' href={ruta}
+    btn btn-outlixne btn-info rounded mx-1 text-white' href={ruta}
     >
 
       {children}

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Footer from "@/components/Footer";
 import "./globals.css";
 import Hero from "@/components/Hero";
+import AppBar from "@/components/AppBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
           <title>Blog - El blog de Malbo</title>
           <link rel='icon' href='/logo.ico' />
         </Head>
-        <Header />
+        <AppBar />
         {children}
         <Footer />
 

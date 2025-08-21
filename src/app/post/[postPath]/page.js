@@ -15,7 +15,7 @@ export default async function PublicationPage({ params }) {
   }
 
   return (
-    <div className="flex flex-col-reverse md:flex-row">
+    <div className="mt-8 flex flex-col-reverse md:flex-row">
       <PanelCategory />
       <ClientPostPage post={JSON.parse(JSON.stringify(post))} />
     </div>

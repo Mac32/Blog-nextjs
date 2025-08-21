@@ -3,14 +3,13 @@
 import Link from 'next/link'
 import Logo from '@/components/elements/Logo'
 import ImagenLogo from '@/../public/image/LogoComprimido.png'
-
 import ButtonMenu from './elements/ButtonMenu'
 
 export default function AppBar() {
 
   return (
     <>
-      <div className="navbar backdrop-blur-sm shadow-sm">
+      <div className="navbar fixed top-0 backdrop-blur-sm shadow-sm z-20">
         <div className="flex space-x-4">
           <Link href='/'>
             <Logo

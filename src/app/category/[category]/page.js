@@ -2,7 +2,6 @@ import dbConnect from "@/lib/mongoConect";
 import Post from "@/models/Post";
 import Section from "@/components/Section";
 import H2 from "@/components/elements/H2";
-import Bar from "@/components/elements/Bar";
 
 async function getPublicaciones(category) {
     let result
@@ -48,7 +47,7 @@ export default async function PublicationPage({ params }) {
     }
 
     return (
-        <>
+        <div className='mt-20 '>
             <H2>
                 Categoría: <span className="text-info">
                     {decoder}
@@ -56,6 +55,6 @@ export default async function PublicationPage({ params }) {
             </H2>
 
             <Section publicaciones={publicaciones} />
-        </>
+        </div>
     )
 }

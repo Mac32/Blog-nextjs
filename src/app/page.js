@@ -3,6 +3,7 @@ import Post from '@/models/Post'
 
 import Section from '@/components/Section'
 import PanelCategory from '@/components/PanelCategory'
+import Header from '@/components/Header'
 
 // Metadata (exportada aparte pero en el mismo archivo físico)
 const metadata = {
@@ -70,6 +71,7 @@ export default async function HomePage() {
 
   return (
     <>
+    <Header />
       <div className='flex flex-col-reverse md:flex-row'>
         <PanelCategory />
         <Section title='Publicaciones' publicaciones={publicaciones} />

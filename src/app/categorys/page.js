@@ -1,12 +1,11 @@
 import CardCategory from "@/components/CardCategory"
 import Bar from "@/components/elements/Bar"
 import H2 from "@/components/elements/H2"
-import Li from "@/components/elements/Li"
 import category from "@/templates/categories"
 
 export default function Categorys() {
     return (
-        <div className='md:mt-12 md:m-3.5 md:flex md:flex-col md:w-full md:flex-wrap justify-center'>
+        <div className='mt-20 md:mt-12 md:m-3.5 md:flex md:flex-col md:w-full md:flex-wrap justify-center'>
             <H2>Categorías:</H2>
 
             <Bar />
